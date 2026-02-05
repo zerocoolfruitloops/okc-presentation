@@ -1,3 +1,5 @@
+'use client';
+
 import { 
   Presentation, 
   Slide, 
@@ -9,82 +11,78 @@ import {
   Footer,
   Logo 
 } from '@/components/Presentation';
-import { AutoReload } from '@/components/AutoReload';
+import { useRealtimePresentation } from '@/hooks/useRealtimePresentation';
+import { SlideContent as SlideContentType } from '@/lib/supabase';
 
-export default function Home() {
-  return (
-    <>
-    <AutoReload />
-    <Presentation>
-      {/* Slide 1: Title Slide */}
-      <Slide>
+function renderSlide(slide: SlideContentType, index: number) {
+  // Title slide (has title and titleBold)
+  if (slide.title && slide.titleBold) {
+    return (
+      <Slide key={slide.id}>
         <SlideContent>
-          <SlideTitle>AI Agents:</SlideTitle>
-          <SlideTitle bold>What&apos;s happening in</SlideTitle>
-          <SlideTitle bold>Energy &amp; Banking ⚡</SlideTitle>
-          <SlideSubtitle>
-            The rise of autonomous AI in critical industries
-          </SlideSubtitle>
+          <SlideTitle>{slide.title}</SlideTitle>
+          <SlideTitle bold>{slide.titleBold}</SlideTitle>
+          {slide.subtitle && <SlideSubtitle>{slide.subtitle}</SlideSubtitle>}
         </SlideContent>
-        <Footer company="Dualboot Partners" title="AI Agents" pageNumber={1} />
+        <Footer pageNumber={index + 1} />
       </Slide>
+    );
+  }
 
-      {/* Slide 2: About Me */}
-      <Slide>
-        <SectionTitle>About me</SectionTitle>
+  // Section slide with bullets
+  if (slide.sectionTitle && slide.bullets) {
+    return (
+      <Slide key={slide.id}>
+        <SectionTitle>{slide.sectionTitle}</SectionTitle>
         <Logo />
         <SlideContent>
-          <div className="flex items-center justify-center gap-16">
-            <div className="w-48 h-48 rounded-full bg-gray-700 flex items-center justify-center">
-              <span className="text-gray-500 text-4xl">📷</span>
-            </div>
-            <div>
-              <h3 className="text-3xl font-bold italic" style={{ fontFamily: 'Playfair Display, serif' }}>
-                Billy Boozer - CEO
-              </h3>
-              <div className="mt-4 flex items-center gap-2">
-                <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
-                  <circle cx="16" cy="16" r="14" stroke="white" strokeWidth="2" />
-                  <circle cx="10" cy="16" r="3" fill="white" />
-                  <circle cx="22" cy="16" r="3" fill="white" />
-                </svg>
-                <span className="text-xl">dualboot</span>
-                <span className="text-sm text-gray-400">PARTNERS</span>
-              </div>
-            </div>
-          </div>
+          <SlideList items={slide.bullets} />
         </SlideContent>
-        <Footer company="Dualboot Partners" title="AI Agents" pageNumber={2} />
+        <Footer pageNumber={index + 1} />
       </Slide>
+    );
+  }
 
-      {/* Slide 3: Agenda/Overview */}
-      <Slide>
-        <SectionTitle>What we&apos;ll cover</SectionTitle>
+  // Section slide with content
+  if (slide.sectionTitle && slide.content) {
+    return (
+      <Slide key={slide.id}>
+        <SectionTitle>{slide.sectionTitle}</SectionTitle>
         <Logo />
         <SlideContent>
-          <SlideList items={[
-            'The evolution of AI and large language models',
-            'What generative AI can do today',
-            'Real-world applications and use cases',
-            'Challenges and limitations',
-            'What\'s next: trends and predictions',
-          ]} />
-        </SlideContent>
-        <Footer company="Dualboot Partners" title="AI Agents" pageNumber={3} />
-      </Slide>
-
-      {/* Slide 4: Placeholder for more content */}
-      <Slide>
-        <SectionTitle>Ready for your content</SectionTitle>
-        <Logo />
-        <SlideContent>
-          <p className="text-2xl text-center text-gray-400">
-            Send me your presentation content and I&apos;ll populate the slides.
+          <p className="text-2xl text-center" style={{ color: '#a0a0b0' }}>
+            {slide.content}
           </p>
         </SlideContent>
-        <Footer company="Dualboot Partners" title="AI Agents" pageNumber={4} />
+        <Footer pageNumber={index + 1} />
       </Slide>
+    );
+  }
+
+  // Fallback - simple content slide
+  return (
+    <Slide key={slide.id}>
+      {slide.sectionTitle && <SectionTitle>{slide.sectionTitle}</SectionTitle>}
+      <Logo />
+      <SlideContent>
+        {slide.title && <SlideTitle>{slide.title}</SlideTitle>}
+        {slide.content && (
+          <p className="text-2xl text-center" style={{ color: '#a0a0b0' }}>
+            {slide.content}
+          </p>
+        )}
+      </SlideContent>
+      <Footer pageNumber={index + 1} />
+    </Slide>
+  );
+}
+
+export default function Home() {
+  const { slides, status } = useRealtimePresentation();
+
+  return (
+    <Presentation status={status}>
+      {slides.map((slide, index) => renderSlide(slide, index))}
     </Presentation>
-    </>
   );
 }

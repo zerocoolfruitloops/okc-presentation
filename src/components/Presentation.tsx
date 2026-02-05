@@ -49,7 +49,7 @@ export function SlideList({ items }: { items: string[] }) {
 
 export function Footer({ 
   company = 'Dualboot Partners', 
-  title = 'Generative AI', 
+  title = 'AI Agents', 
   pageNumber 
 }: { 
   company?: string; 
@@ -79,9 +79,10 @@ export function Logo() {
 
 interface PresentationProps {
   children: ReactNode[];
+  status?: 'connecting' | 'connected' | 'error';
 }
 
-export function Presentation({ children }: PresentationProps) {
+export function Presentation({ children, status = 'connected' }: PresentationProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = children.length;
 
@@ -128,7 +129,6 @@ export function Presentation({ children }: PresentationProps) {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [nextSlide, prevSlide, goToSlide, totalSlides]);
 
-  // Touch/click navigation
   const handleClick = (e: React.MouseEvent) => {
     const { clientX } = e;
     const { innerWidth } = window;
@@ -140,11 +140,36 @@ export function Presentation({ children }: PresentationProps) {
     }
   };
 
+  const statusColor = status === 'connected' ? '#4ade80' : status === 'connecting' ? '#fbbf24' : '#ef4444';
+  const statusText = status === 'connected' ? 'live' : status === 'connecting' ? 'connecting...' : 'offline';
+
   return (
     <div onClick={handleClick} style={{ cursor: 'pointer' }}>
       {children[currentSlide]}
       <div className="nav-hint">
-        {currentSlide + 1} / {totalSlides} • Arrow keys to navigate
+        {currentSlide + 1} / {totalSlides}
+      </div>
+      <div style={{
+        position: 'fixed',
+        bottom: 8,
+        left: 8,
+        fontSize: 9,
+        color: statusColor,
+        opacity: 0.8,
+        zIndex: 9999,
+        fontFamily: 'monospace',
+        display: 'flex',
+        alignItems: 'center',
+        gap: 4,
+      }}>
+        <span style={{ 
+          width: 6, 
+          height: 6, 
+          borderRadius: '50%', 
+          backgroundColor: statusColor,
+          display: 'inline-block',
+        }} />
+        {statusText}
       </div>
     </div>
   );
