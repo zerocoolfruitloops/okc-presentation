@@ -229,16 +229,17 @@ const DEFAULT_SLIDES: SlideContent[] = [
     personTwitter: 'https://x.com/DanielaAmodei',
     image: '/daniela-amodei.jpg',
   },
-  // DB90 LEAD-IN
+  // DB90 LEAD-IN - Legacy Tech EOL
   {
     id: 16,
-    sectionTitle: 'The Development Problem',
+    sectionTitle: 'Legacy Technologies Still Running',
     callouts: [
-      { stat: '6-12 mo', label: 'Average enterprise project timeline', sublabel: '2-3x over budget' },
-      { stat: '70%', label: 'Software projects fail to meet expectations' },
-      { stat: '40%', label: 'Engineering time spent on repetitive tasks' },
-      { stat: '#1', label: 'Developer burnout at all-time highs' },
-      { stat: '↓', label: 'Quality suffers under deadline pressure' },
+      { stat: 'COBOL', label: '220 billion lines still in production', sublabel: 'Since 1959 • Avg dev age: 55+' },
+      { stat: 'AS/400', label: 'IBM i RPG applications', sublabel: 'Since 1988 • Banks & insurance' },
+      { stat: 'FoxPro', label: 'Microsoft ended support', sublabel: 'EOL: January 2015' },
+      { stat: 'VB6', label: 'Visual Basic 6 extended support ended', sublabel: 'EOL: April 2008' },
+      { stat: 'FilePro', label: 'DOS-era database applications', sublabel: 'Obsolete since 1990s' },
+      { stat: 'PowerBuilder', label: 'Enterprise client-server apps', sublabel: 'Declining talent pool' },
     ],
   },
   {
