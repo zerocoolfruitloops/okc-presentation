@@ -78,6 +78,12 @@ const DEFAULT_SLIDES: SlideContent[] = [
         url: 'https://temporal.io',
         description: 'Durable execution platform for building reliable distributed systems. Perfect for orchestrating long-running AI workflows with fault tolerance and visibility.',
       },
+      {
+        name: 'LiteLLM',
+        logo: '/litellm-logo.png',
+        url: 'https://litellm.ai',
+        description: 'Open-source library to call 100+ LLMs using the same OpenAI format. Unified interface for GPT, Claude, Gemini, Llama with load balancing and spend tracking.',
+      },
     ],
   },
   // CLOSED SOURCE AI - Page 1
@@ -125,7 +131,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     projects: [
       {
         name: 'Cursor',
-        logo: '/cursor-logo.png',
+        logo: '/cursor-logo.svg',
         url: 'https://cursor.com',
         description: 'AI-first code editor built on VS Code. Features AI-powered autocomplete, chat, and codebase understanding that learns your project\'s patterns.',
       },
