@@ -1,204 +1,218 @@
 'use client';
 
+import styles from './DB90Diagram.module.css';
+
 export function DB90Diagram() {
   return (
-    <div className="db90-slide">
+    <div className={styles.container}>
       {/* Header */}
-      <div className="db90-header">
-        <h2 className="db90-title">
+      <header className={styles.header}>
+        <h1 className={styles.title}>
           DB90: Build faster, <em>build better</em>
-        </h2>
-        <div className="db90-logo">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <circle cx="16" cy="16" r="12" stroke="currentColor" strokeWidth="1.5"/>
-            <line x1="16" y1="2" x2="16" y2="8" stroke="currentColor" strokeWidth="1.5"/>
-            <line x1="16" y1="24" x2="16" y2="30" stroke="currentColor" strokeWidth="1.5"/>
-            <line x1="2" y1="16" x2="8" y2="16" stroke="currentColor" strokeWidth="1.5"/>
-            <line x1="24" y1="16" x2="30" y2="16" stroke="currentColor" strokeWidth="1.5"/>
-          </svg>
-        </div>
-      </div>
+        </h1>
+        <svg className={styles.logo} width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="18" r="12" stroke="currentColor" strokeWidth="1.5"/>
+          <line x1="18" y1="2" x2="18" y2="10" stroke="currentColor" strokeWidth="1.5"/>
+          <line x1="18" y1="26" x2="18" y2="34" stroke="currentColor" strokeWidth="1.5"/>
+          <line x1="2" y1="18" x2="10" y2="18" stroke="currentColor" strokeWidth="1.5"/>
+          <line x1="26" y1="18" x2="34" y2="18" stroke="currentColor" strokeWidth="1.5"/>
+        </svg>
+      </header>
 
-      <div className="db90-body">
-        {/* Left Column */}
-        <div className="db90-left">
-          <div className="db90-desc-box">
+      {/* Main Content */}
+      <main className={styles.main}>
+        {/* Left Sidebar */}
+        <aside className={styles.sidebar}>
+          {/* Description Box */}
+          <div className={styles.descBox}>
             <p>
-              DB90 speeds up software development by using AI tools, guided by 
-              experts, to handle time-consuming tasks. This boosts productivity, 
-              reduces repetitive work, shortens time to market, and improves 
-              software quality.
+              DB90 speeds up software development by using AI tools, guided by experts, to handle time-consuming tasks. This boosts productivity, reduces repetitive work, shortens time to market, and improves software quality.
             </p>
           </div>
 
-          <div className="db90-legend">
-            <div className="legend-row">
-              <div className="legend-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                  <circle cx="12" cy="8" r="4"/>
-                  <path d="M12 14c-6 0-8 3-8 6v1h16v-1c0-3-2-6-8-6z"/>
-                </svg>
-              </div>
-              <div className="legend-text">
-                <strong>Operators</strong>
-                <span>Human experts operate the AI tools</span>
-              </div>
-            </div>
+          {/* Legend */}
+          <nav className={styles.legend}>
+            <LegendItem 
+              icon={<OperatorIcon />}
+              title="Operators"
+              desc="Human experts operate the AI tools"
+            />
+            <LegendItem 
+              icon={<ToolIcon />}
+              title="AI Tools"
+              desc="Tools provide custom interfaces to engage the AI agents"
+            />
+            <LegendItem 
+              icon={<ArtifactIcon />}
+              title="Artifacts"
+              desc="Similar to traditional SDLC"
+            />
+            <LegendItem 
+              icon={<ChartIcon />}
+              title="Efficiency Gains"
+              desc="50% efficiency gain"
+            />
+          </nav>
 
-            <div className="legend-row">
-              <div className="legend-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                  <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
-                </svg>
-              </div>
-              <div className="legend-text">
-                <strong>AI Tools</strong>
-                <span>Tools provide custom interfaces to engage the AI agents</span>
-              </div>
+          {/* Efficiency Bar */}
+          <div className={styles.effBar}>
+            <span>100%</span>
+            <div className={styles.effBarTrack}>
+              <div className={styles.effBarFill} />
             </div>
-
-            <div className="legend-row">
-              <div className="legend-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                  <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/>
-                </svg>
-              </div>
-              <div className="legend-text">
-                <strong>Artifacts</strong>
-                <span>Similar to traditional SDLC</span>
-              </div>
-            </div>
-
-            <div className="legend-row">
-              <div className="legend-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                  <path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/>
-                </svg>
-              </div>
-              <div className="legend-text">
-                <strong>Efficiency Gains</strong>
-                <span>50% efficiency gain</span>
-              </div>
-            </div>
+            <span>50%</span>
           </div>
 
-          {/* Efficiency Summary */}
-          <div className="eff-summary">
-            <div className="eff-bar">
-              <span>100%</span>
-              <div className="eff-bar-fill"></div>
-              <span>50%</span>
-            </div>
-          </div>
-
-          {/* Dualboot Logo */}
-          <div className="db90-brand">
-            <div className="brand-circle">
-              <svg viewBox="0 0 40 40" width="28" height="28" fill="none">
-                <circle cx="20" cy="20" r="16" stroke="currentColor" strokeWidth="1.5"/>
-                <circle cx="14" cy="20" r="3" fill="currentColor"/>
-                <circle cx="26" cy="20" r="3" fill="currentColor"/>
+          {/* Brand */}
+          <div className={styles.brand}>
+            <div className={styles.brandIcon}>
+              <svg width="24" height="24" viewBox="0 0 32 32" fill="currentColor">
+                <circle cx="10" cy="16" r="4"/>
+                <circle cx="22" cy="16" r="4"/>
               </svg>
             </div>
             <span>Dualboot Partners</span>
           </div>
-        </div>
+        </aside>
 
-        {/* Right Column - The Matrix */}
-        <div className="db90-matrix">
+        {/* Matrix */}
+        <div className={styles.matrix}>
           {/* Phase Headers */}
-          <div className="matrix-row phase-row">
-            <div className="spacer"></div>
-            <div className="phase-pill">Requirements</div>
-            <div className="phase-pill">Design</div>
-            <div className="phase-pill">Development</div>
-            <div className="phase-pill">Test</div>
-            <div className="phase-pill">Deployment</div>
+          <div className={styles.row}>
+            <div className={styles.rowLabel} />
+            {['Requirements', 'Design', 'Development', 'Test', 'Deployment'].map(phase => (
+              <div key={phase} className={styles.phasePill}>{phase}</div>
+            ))}
           </div>
 
-          {/* Operators Row */}
-          <div className="matrix-row">
-            <div className="row-label">
-              <div className="label-icon">👤</div>
-            </div>
-            <div className="matrix-cell">Business<br/>Analyst</div>
-            <div className="matrix-cell">Designer</div>
-            <div className="matrix-cell">Software<br/>Engineer</div>
-            <div className="matrix-cell">Quality<br/>Engineer</div>
-            <div className="matrix-cell">DevOps<br/>Engineer</div>
+          {/* Operators */}
+          <div className={styles.row}>
+            <div className={styles.rowLabel}><OperatorIcon /></div>
+            {['Business\nAnalyst', 'Designer', 'Software\nEngineer', 'Quality\nEngineer', 'DevOps\nEngineer'].map((role, i) => (
+              <div key={i} className={styles.cell}>
+                {role.split('\n').map((line, j) => <span key={j}>{line}</span>)}
+              </div>
+            ))}
           </div>
 
-          {/* AI Tools Row */}
-          <div className="matrix-row tools-row">
-            <div className="row-label">
-              <div className="label-icon">🔧</div>
+          {/* AI Tools */}
+          <div className={styles.row}>
+            <div className={styles.rowLabel}><ToolIcon /></div>
+            <div className={`${styles.cell} ${styles.cell3po}`}>
+              <span className={styles.badge}>3PO</span>
             </div>
-            <div className="matrix-cell tool-3po">
-              <span className="pill-badge">3PO</span>
+            <div className={`${styles.cell} ${styles.cellTools}`}>
+              <span>UXPilot</span><span>Figma</span>
             </div>
-            <div className="matrix-cell tools-cell">UXPilot<br/>Figma</div>
-            <div className="matrix-cell tools-cell">Cursor<br/>CoPilot<br/>WindSurf<br/>CodeWhisperer</div>
-            <div className="matrix-cell tools-cell">BrowserStack<br/>Testim<br/>Playwright<br/>Cypress</div>
-            <div className="matrix-cell tools-cell">AWS<br/>Azure<br/>GCP<br/>Terraform</div>
+            <div className={`${styles.cell} ${styles.cellTools}`}>
+              <span>Cursor</span><span>CoPilot</span><span>WindSurf</span><span>CodeWhisperer</span>
+            </div>
+            <div className={`${styles.cell} ${styles.cellTools}`}>
+              <span>BrowserStack</span><span>Testim</span><span>Playwright</span><span>Cypress</span>
+            </div>
+            <div className={`${styles.cell} ${styles.cellTools}`}>
+              <span>AWS</span><span>Azure</span><span>GCP</span><span>Terraform</span>
+            </div>
           </div>
 
-          {/* Connector Row */}
-          <div className="matrix-row connector-row">
-            <div className="spacer"></div>
-            <div className="connector">↕</div>
-            <div className="connector">↕</div>
-            <div className="connector-center">
-              <span className="pill-badge">3PO</span>
+          {/* Connectors */}
+          <div className={`${styles.row} ${styles.connectorRow}`}>
+            <div className={styles.rowLabel} />
+            <div className={styles.connector}>↕</div>
+            <div className={styles.connector}>↕</div>
+            <div className={styles.connectorCenter}>
+              <div className={styles.connectorLine} />
+              <span className={styles.badge}>3PO</span>
+              <div className={styles.connectorLine} />
             </div>
-            <div className="connector">↕</div>
-            <div className="connector">↕</div>
+            <div className={styles.connector}>↕</div>
+            <div className={styles.connector}>↕</div>
           </div>
 
-          {/* Artifacts Row */}
-          <div className="matrix-row">
-            <div className="row-label">
-              <div className="label-icon">📄</div>
+          {/* Artifacts */}
+          <div className={styles.row}>
+            <div className={styles.rowLabel}><ArtifactIcon /></div>
+            <div className={`${styles.cell} ${styles.cellArtifact}`}>
+              <span>Requirements</span><span>Diagrams</span><span>Backlog</span>
             </div>
-            <div className="matrix-cell artifact-cell">Requirements<br/>Diagrams<br/>Backlog</div>
-            <div className="matrix-cell artifact-cell">Mockups<br/>Prototypes</div>
-            <div className="matrix-cell artifact-cell">Source<br/>Code</div>
-            <div className="matrix-cell artifact-cell">Test Plans<br/>Unit Tests<br/>System Tests</div>
-            <div className="matrix-cell artifact-cell">Infrastructure</div>
+            <div className={`${styles.cell} ${styles.cellArtifact}`}>
+              <span>Mockups</span><span>Prototypes</span>
+            </div>
+            <div className={`${styles.cell} ${styles.cellArtifact}`}>
+              <span>Source</span><span>Code</span>
+            </div>
+            <div className={`${styles.cell} ${styles.cellArtifact}`}>
+              <span>Test Plans</span><span>Unit Tests</span><span>System Tests</span>
+            </div>
+            <div className={`${styles.cell} ${styles.cellArtifact}`}>
+              <span>Infrastructure</span>
+            </div>
           </div>
 
-          {/* Efficiency Row */}
-          <div className="matrix-row eff-row">
-            <div className="row-label">
-              <div className="label-icon">📊</div>
-            </div>
-            <div className="eff-cell">
-              <div className="eff-before">15%</div>
-              <div className="eff-arrow">↓</div>
-              <div className="eff-after">5%</div>
-            </div>
-            <div className="eff-cell">
-              <div className="eff-before">20%</div>
-              <div className="eff-arrow">↓</div>
-              <div className="eff-after">10%</div>
-            </div>
-            <div className="eff-cell">
-              <div className="eff-before">40%</div>
-              <div className="eff-arrow">↓</div>
-              <div className="eff-after">15%</div>
-            </div>
-            <div className="eff-cell">
-              <div className="eff-before">20%</div>
-              <div className="eff-arrow">↓</div>
-              <div className="eff-after">15%</div>
-            </div>
-            <div className="eff-cell">
-              <div className="eff-before">5%</div>
-              <div className="eff-arrow">↓</div>
-              <div className="eff-after">5%</div>
-            </div>
+          {/* Efficiency */}
+          <div className={`${styles.row} ${styles.effRow}`}>
+            <div className={styles.rowLabel}><ChartIcon /></div>
+            {[
+              { before: '15%', after: '5%' },
+              { before: '20%', after: '10%' },
+              { before: '40%', after: '15%' },
+              { before: '20%', after: '15%' },
+              { before: '5%', after: '5%' },
+            ].map((eff, i) => (
+              <div key={i} className={styles.effCell}>
+                <span className={styles.effBefore}>{eff.before}</span>
+                <span className={styles.effArrow}>↓</span>
+                <span className={styles.effAfter}>{eff.after}</span>
+              </div>
+            ))}
           </div>
         </div>
+      </main>
+    </div>
+  );
+}
+
+function LegendItem({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
+  return (
+    <div className={styles.legendItem}>
+      <div className={styles.legendIcon}>{icon}</div>
+      <div className={styles.legendText}>
+        <strong>{title}</strong>
+        <span>{desc}</span>
       </div>
     </div>
+  );
+}
+
+function OperatorIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+      <circle cx="12" cy="7" r="4"/>
+      <path d="M12 13c-5 0-8 2.5-8 5v2h16v-2c0-2.5-3-5-8-5z"/>
+    </svg>
+  );
+}
+
+function ToolIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+      <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+    </svg>
+  );
+}
+
+function ArtifactIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+      <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/>
+    </svg>
+  );
+}
+
+function ChartIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+      <path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/>
+    </svg>
   );
 }

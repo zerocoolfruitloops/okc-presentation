@@ -1,0 +1,401 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 3rem;
+  box-sizing: border-box;
+  background: #0a0a0f;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.title em {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+.logo {
+  color: #6b7280;
+}
+
+/* Main Layout */
+.main {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+  min-height: 0;
+  align-items: flex-start;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.descBox {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 1.25rem;
+}
+
+.descBox p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.65;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.legendIcon {
+  width: 28px;
+  height: 28px;
+  background: #2563eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.legendText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.legendText strong {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.legendText span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+/* Efficiency Bar */
+.effBar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  color: #6b7280;
+  margin-top: auto;
+}
+
+.effBarTrack {
+  flex: 1;
+  height: 6px;
+  background: #1f2937;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.effBarFill {
+  width: 50%;
+  height: 100%;
+  background: #2563eb;
+  border-radius: 3px;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brandIcon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+}
+
+.brand span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  color: #6b7280;
+}
+
+/* Matrix */
+.matrix {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 36px repeat(5, 1fr);
+  gap: 0.4rem;
+  align-items: stretch;
+}
+
+.rowLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4b5563;
+}
+
+/* Phase Pills */
+.phasePill {
+  background: #2563eb;
+  color: #fff;
+  padding: 0.5rem 0.25rem;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+/* Cells */
+.cell {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 0.6rem 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 52px;
+}
+
+.cell span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #e5e7eb;
+}
+
+.cell3po {
+  background: transparent;
+  border: 2px solid #2563eb;
+  min-height: 52px;
+}
+
+.cellTools {
+  min-height: 72px;
+}
+
+.cellTools span {
+  font-size: 0.55rem;
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+.cellArtifact span {
+  font-size: 0.55rem;
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+/* Badge */
+.badge {
+  background: #2563eb;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+/* Connectors */
+.connectorRow {
+  min-height: 36px;
+  align-items: center;
+}
+
+.connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  font-size: 1rem;
+}
+
+.connectorCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.connectorLine {
+  width: 24px;
+  height: 2px;
+  background: #2563eb;
+}
+
+/* Efficiency */
+.effRow {
+  margin-top: 0.5rem;
+}
+
+.effCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.effBefore {
+  background: #2563eb;
+  color: #fff;
+  padding: 0.3rem 0.5rem;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: center;
+}
+
+.effArrow {
+  color: #4b5563;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.effAfter {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  padding: 0.3rem 0.5rem;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .container {
+    padding: 1.5rem 2rem;
+  }
+  
+  .sidebar {
+    width: 200px;
+  }
+  
+  .descBox p {
+    font-size: 0.75rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .descBox {
+    flex: 1;
+    min-width: 220px;
+  }
+  
+  .legend {
+    flex: 1;
+    min-width: 220px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  
+  .effBar,
+  .brand {
+    display: none;
+  }
+  
+  .matrix {
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+  
+  .row {
+    min-width: 580px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 1.25rem;
+  }
+  
+  .sidebar {
+    flex-direction: column;
+  }
+  
+  .legend {
+    grid-template-columns: 1fr;
+  }
+}
