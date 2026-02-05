@@ -175,7 +175,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     personCompany: 'Anthropic',
     personBio: 'Co-founded Anthropic to build safe, beneficial AI. Former VP of Operations at OpenAI. Leading the company behind Claude.',
     personTwitter: 'https://x.com/DanielaAmodei',
-    image: '/daniela-amodei.png',
+    image: '/daniela-amodei.jpg',
   },
   // DB90 SECTION
   {
