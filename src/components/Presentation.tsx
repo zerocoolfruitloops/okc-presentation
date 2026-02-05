@@ -141,7 +141,6 @@ export function Presentation({ children, status = 'connected' }: PresentationPro
   };
 
   const statusColor = status === 'connected' ? '#4ade80' : status === 'connecting' ? '#fbbf24' : '#ef4444';
-  const statusText = status === 'connected' ? 'live' : status === 'connecting' ? 'connecting...' : 'offline';
 
   return (
     <div onClick={handleClick} style={{ cursor: 'pointer' }}>
@@ -149,28 +148,27 @@ export function Presentation({ children, status = 'connected' }: PresentationPro
       <div className="nav-hint">
         {currentSlide + 1} / {totalSlides}
       </div>
-      <div style={{
-        position: 'fixed',
-        bottom: 8,
-        left: 8,
-        fontSize: 9,
-        color: statusColor,
-        opacity: 0.8,
-        zIndex: 9999,
-        fontFamily: 'monospace',
-        display: 'flex',
-        alignItems: 'center',
-        gap: 4,
-      }}>
-        <span style={{ 
-          width: 6, 
-          height: 6, 
-          borderRadius: '50%', 
+      {/* Minimal status dot - only visible when not connected */}
+      {status !== 'connected' && (
+        <div style={{
+          position: 'fixed',
+          bottom: 12,
+          left: 12,
+          width: 8,
+          height: 8,
+          borderRadius: '50%',
           backgroundColor: statusColor,
-          display: 'inline-block',
+          opacity: 0.7,
+          zIndex: 9999,
+          animation: status === 'connecting' ? 'pulse 1.5s ease-in-out infinite' : 'none',
         }} />
-        {statusText}
-      </div>
+      )}
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 0.4; transform: scale(1); }
+          50% { opacity: 0.8; transform: scale(1.2); }
+        }
+      `}</style>
     </div>
   );
 }
