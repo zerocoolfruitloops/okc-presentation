@@ -273,7 +273,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   {
     id: 19,
     sectionTitle: 'What If We Could...',
-    content: 'Legacy systems cost enterprises $1.14 trillion annually in maintenance alone. What if there was a better way?',
+    content: 'What if there was a better way to modernize legacy systems?',
     features: [
       { icon: 'zap', title: '50% Faster Development', description: 'Cut development time in half — without cutting corners' },
       { icon: 'brain', title: 'AI-Powered Automation', description: 'Let AI handle the tedious work — humans focus on architecture' },
@@ -350,7 +350,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   {
     id: 29,
     sectionTitle: 'Requirements: The Replatforming Bottleneck',
-    content: 'Technical debt costs enterprises $1.52 trillion annually — and most of it is trapped in systems no one fully understands.',
+    content: 'Most technical debt is trapped in systems no one fully understands.',
     callouts: [
       { icon: 'database', stat: '', label: 'Millions of lines, zero docs', sublabel: 'Legacy systems are black boxes' },
       { icon: 'code', stat: '', label: 'Logic buried in code', sublabel: '30-year-old comments are the only docs' },
