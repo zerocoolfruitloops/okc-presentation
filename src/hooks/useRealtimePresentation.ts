@@ -52,6 +52,16 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   {
     id: 6,
+    sectionTitle: 'Who to Follow',
+    personName: 'Andrej Karpathy',
+    personTitle: 'AI Researcher & Educator',
+    personCompany: 'Former Tesla / OpenAI',
+    personBio: 'Co-founded OpenAI. Former Director of AI at Tesla (Autopilot). Now building educational content on AI/ML. One of the most influential voices in deep learning.',
+    personTwitter: 'https://x.com/karpathy',
+    image: '/andrej-karpathy.jpg',
+  },
+  {
+    id: 7,
     sectionTitle: 'Who to Follow — Energy',
     personName: 'Darryl Willis',
     personTitle: 'VP, Energy Industry Solutions',
@@ -62,7 +72,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     image: '/darryl-willis.svg',
   },
   {
-    id: 7,
+    id: 8,
     sectionTitle: 'Who to Follow — Banking',
     personName: 'Teresa Heitsenrether',
     personTitle: 'Chief Data & Analytics Officer',

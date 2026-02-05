@@ -97,6 +97,7 @@ function renderSlide(slide: SlideData, index: number, total: number) {
     const qrCodeMap: Record<string, string> = {
       'Ryan Carson': '/ryan-carson-qr.svg',
       'Boris Cherny': '/boris-cherny-qr.svg',
+      'Andrej Karpathy': '/andrej-karpathy-qr.svg',
       'Darryl Willis': '/darryl-willis-qr.svg',
       'Teresa Heitsenrether': '/teresa-heitsenrether-qr.svg',
     };
