@@ -1037,6 +1037,23 @@ html, body {
   flex-shrink: 0;
 }
 
+.callout-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-bright) 100%);
+  border-radius: 12px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.callout-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
 .callout-content {
   display: flex;
   flex-direction: column;

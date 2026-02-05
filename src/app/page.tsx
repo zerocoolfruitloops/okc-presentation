@@ -53,6 +53,7 @@ type SlideData = {
     stat: string;
     label: string;
     sublabel?: string;
+    icon?: string;
   }[];
 };
 
@@ -306,6 +307,17 @@ function renderSlide(slide: SlideData, index: number, total: number) {
 
   // Callouts slide (horizontal cards)
   if (slide.sectionTitle && slide.callouts && slide.callouts.length > 0) {
+    const icons: Record<string, JSX.Element> = {
+      code: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>,
+      file: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14,2 L6,2 C4.9,2 4,2.9 4,4 L4,20 C4,21.1 4.9,22 6,22 L18,22 C19.1,22 20,21.1 20,20 L20,8 L14,2 Z"/><polyline points="14,2 14,8 20,8"/></svg>,
+      users: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17,21 L17,19 C17,16.8 15.2,15 13,15 L5,15 C2.8,15 1,16.8 1,19 L1,21"/><circle cx="9" cy="7" r="4"/><path d="M23,21 L23,19 C23,17.1 21.8,15.5 20,15"/><path d="M16,3 C17.8,3.5 19,5.1 19,7 C19,8.9 17.8,10.5 16,11"/></svg>,
+      clock: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>,
+      refresh: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="23,4 23,10 17,10"/><path d="M20.5,15.5 C19.1,19.1 15.3,21.5 11,21 C5.5,20.4 1.5,15.5 2.1,10 C2.7,4.5 7.6,0.5 13.1,1.1 C17.3,1.5 20.7,4.4 21.8,8.3"/></svg>,
+      alert: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10.29,3.86 L1.82,18 C1.64,18.3 1.64,18.69 1.82,19 C2,19.3 2.32,19.5 2.68,19.5 L21.32,19.5 C21.68,19.5 22,19.3 22.18,19 C22.36,18.69 22.36,18.3 22.18,18 L13.71,3.86 C13.53,3.56 13.21,3.36 12.85,3.36 L11.15,3.36 C10.79,3.36 10.47,3.56 10.29,3.86 Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>,
+      database: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21,12 C21,13.7 17,15 12,15 C7,15 3,13.7 3,12"/><path d="M3,5 L3,19 C3,20.7 7,22 12,22 C17,22 21,20.7 21,19 L21,5"/></svg>,
+      brain: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12,2 C8.1,2 5,5.1 5,9 C5,11.4 6.2,13.5 8,14.7 L8,22 L16,22 L16,14.7 C17.8,13.5 19,11.4 19,9 C19,5.1 15.9,2 12,2 Z"/><line x1="9" y1="22" x2="15" y2="22"/><line x1="10" y1="2" x2="10" y2="7"/><line x1="14" y1="2" x2="14" y2="7"/></svg>,
+    };
+    
     return (
       <Slide key={slide.id}>
         <SectionTitle>{slide.sectionTitle}</SectionTitle>
@@ -314,7 +326,11 @@ function renderSlide(slide: SlideData, index: number, total: number) {
           <div className="callouts-grid">
             {slide.callouts.map((callout, i) => (
               <div key={i} className="callout-card">
-                <span className="callout-stat">{callout.stat}</span>
+                {callout.icon && icons[callout.icon] ? (
+                  <span className="callout-icon">{icons[callout.icon]}</span>
+                ) : (
+                  <span className="callout-stat">{callout.stat}</span>
+                )}
                 <div className="callout-content">
                   <span className="callout-label">{callout.label}</span>
                   {callout.sublabel && <span className="callout-sublabel">{callout.sublabel}</span>}

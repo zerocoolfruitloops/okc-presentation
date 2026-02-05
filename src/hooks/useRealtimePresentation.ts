@@ -320,12 +320,12 @@ const DEFAULT_SLIDES: SlideContent[] = [
   {
     id: 27,
     sectionTitle: 'Requirements: The Replatforming Bottleneck',
-    bullets: [
-      'Legacy systems: millions of lines, zero documentation',
-      'Business logic buried in 30-year-old code comments',
-      'Tribal knowledge walks out the door every retirement',
-      'Traditional discovery takes 6-18 months per system',
-      'By the time you understand it, requirements have changed',
+    callouts: [
+      { icon: 'database', stat: '', label: 'Millions of lines, zero documentation', sublabel: 'Legacy systems are black boxes' },
+      { icon: 'code', stat: '', label: 'Business logic buried in code', sublabel: '30-year-old comments are the only docs' },
+      { icon: 'users', stat: '', label: 'Tribal knowledge walks out the door', sublabel: 'Every retirement loses critical context' },
+      { icon: 'clock', stat: '', label: 'Discovery takes 6-18 months', sublabel: 'Per system, before writing a single line' },
+      { icon: 'refresh', stat: '', label: 'Requirements change mid-flight', sublabel: 'By the time you understand it, it\'s outdated' },
     ],
   },
   // 3PO SECTION

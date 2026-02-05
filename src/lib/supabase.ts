@@ -44,6 +44,7 @@ export type SlideContent = {
     stat: string;
     label: string;
     sublabel?: string;
+    icon?: string;
   }[];
 };
 
