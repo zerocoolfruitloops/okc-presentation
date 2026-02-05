@@ -66,6 +66,10 @@
   filter: none;
 }
 
+[data-theme="light"] .logo img {
+  filter: invert(1);
+}
+
 [data-theme="light"] .two-column-image img {
   box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.2);
 }
