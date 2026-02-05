@@ -190,11 +190,7 @@
   line-height: 1.4;
 }
 
-/* 3PO cell */
-.cell3po {
-  background: transparent;
-  border: 2px solid #2563eb;
-}
+/* 3PO cell - legacy, now using cell3poSpan */
 
 /* Tools cell - smaller text */
 .cellTools span {
@@ -220,10 +216,56 @@
   font-weight: 600;
 }
 
-/* Connector row */
-.connectorRow {
+/* Tools + Connector combined wrapper */
+.toolsConnectorWrapper {
+  display: grid;
+  grid-template-columns: 56px repeat(5, 1fr);
+  gap: 12px;
+  flex: 1.4;
+}
+
+.toolsConnectorWrapper .rowIcon {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+/* 3PO spanning box - covers both rows */
+.cell3poSpan {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #2563eb;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.cell3poTop {
+  flex: 1;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cell3poBottom {
   flex: 0.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  font-size: 1.75rem;
+}
+
+/* Other columns - tool + connector stacked */
+.toolsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toolsColumn .cell {
+  flex: 1;
 }
 
 .connector {
@@ -232,6 +274,7 @@
   justify-content: center;
   color: #2563eb;
   font-size: 1.75rem;
+  flex: 0.4;
 }
 
 .connectorCenter {
@@ -239,6 +282,7 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
+  flex: 0.4;
 }
 
 .connectorLine {
