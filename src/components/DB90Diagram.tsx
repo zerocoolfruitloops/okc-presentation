@@ -46,11 +46,6 @@ export function DB90Diagram() {
                 </div>
               </div>
 
-              <div className={styles.effBar}>
-                <span>100%</span>
-                <div className={styles.effBarTrack}><div className={styles.effBarFill}/></div>
-                <span>50%</span>
-              </div>
             </div>
 
           </div>
