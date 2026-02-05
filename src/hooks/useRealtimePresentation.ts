@@ -26,13 +26,18 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   {
     id: 3,
+    sectionTitle: 'My Background',
+    graphic: '/billy-trump.jpg',
+  },
+  {
+    id: 4,
     title: 'AI Agents 2026:',
     titleBold: 'The Age of the Agent',
     subtitle: 'What\'s happening in Energy & Banking',
   },
   // OPEN SOURCE AI - Page 1
   {
-    id: 4,
+    id: 5,
     sectionTitle: 'Open Source AI Tools',
     projects: [
       {
@@ -53,7 +58,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // OPEN SOURCE AI - Page 2
   {
-    id: 5,
+    id: 6,
     sectionTitle: 'Open Source AI Tools',
     projects: [
       {
@@ -74,7 +79,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // OPEN SOURCE AI - Page 3
   {
-    id: 6,
+    id: 7,
     sectionTitle: 'Open Source AI Tools',
     projects: [
       {
@@ -95,7 +100,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
     // OPEN SOURCE AI - Page 4
   {
-    id: 7,
+    id: 8,
     sectionTitle: 'Open Source AI Tools',
     projects: [
       {
@@ -109,7 +114,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // CLOSED SOURCE AI - Page 1
   {
-    id: 8,
+    id: 9,
     sectionTitle: 'Closed Source AI',
     projects: [
       {
@@ -130,7 +135,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // CLOSED SOURCE AI - Page 2
   {
-    id: 9,
+    id: 10,
     sectionTitle: 'Closed Source AI',
     projects: [
       {
@@ -151,7 +156,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // CLOSED SOURCE AI - Page 3
   {
-    id: 10,
+    id: 11,
     sectionTitle: 'Closed Source AI',
     projects: [
       {
@@ -172,7 +177,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // CLOSED SOURCE AI - Page 4 (AWS)
   {
-    id: 11,
+    id: 12,
     sectionTitle: 'Closed Source AI',
     projects: [
       {
@@ -193,7 +198,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // PEOPLE TO FOLLOW
   {
-    id: 12,
+    id: 13,
     sectionTitle: 'Who to Follow',
     personName: 'Ryan Carson',
     personTitle: 'Builder in Residence',
@@ -204,7 +209,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     image: '/ryan-carson.jpg',
   },
   {
-    id: 13,
+    id: 14,
     sectionTitle: 'Who to Follow',
     personName: 'Boris Cherny',
     personTitle: 'Creator of Claude Code',
@@ -215,7 +220,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     image: '/boris-cherny.jpg',
   },
   {
-    id: 14,
+    id: 15,
     sectionTitle: 'Who to Follow',
     personName: 'Andrej Karpathy',
     personTitle: 'AI Researcher & Educator',
@@ -225,7 +230,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     image: '/andrej-karpathy.jpg',
   },
   {
-    id: 15,
+    id: 16,
     sectionTitle: 'Who to Follow — Energy',
     personName: 'Darryl Willis',
     personTitle: 'Corporate Vice President, Energy & Resources',
@@ -235,7 +240,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     image: '/darryl-willis.jpg',
   },
   {
-    id: 16,
+    id: 17,
     sectionTitle: 'Who to Follow — AI Leadership',
     personName: 'Daniela Amodei',
     personTitle: 'President & Co-Founder',
@@ -246,7 +251,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // DB90 LEAD-IN - Legacy Tech EOL
   {
-    id: 17,
+    id: 18,
     sectionTitle: 'Legacy Technologies Still Running',
     legacyCards: [
       { name: 'COBOL', icon: 'terminal', description: '220 billion lines still in production', meta: 'Since 1959 • Avg dev age: 55+' },
@@ -258,7 +263,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     ],
   },
   {
-    id: 18,
+    id: 19,
     sectionTitle: 'What If We Could...',
     bullets: [
       'Cut development time in half — without cutting corners',
@@ -270,47 +275,47 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // DB90 SECTION
   {
-    id: 19,
+    id: 20,
     title: 'Introducing',
     titleBold: 'DB90',
     subtitle: 'AI-augmented software development that delivers 50% efficiency gains',
   },
   {
-    id: 20,
+    id: 21,
     graphic: 'db90',
   },
   {
-    id: 21,
+    id: 22,
     sectionTitle: 'DB90 — Organization Dashboard',
     graphic: '/db90-dashboard.png',
     subtitle: 'Real-time visibility into AI tool usage, costs, and trends across your entire engineering organization',
   },
   {
-    id: 22,
+    id: 23,
     sectionTitle: 'DB90 — Event Tracking',
     graphic: '/db90-events.png',
     subtitle: 'Every AI interaction logged with tool, type, risk level, user, project, cost, and tokens — full audit trail',
   },
   {
-    id: 23,
+    id: 24,
     sectionTitle: 'DB90 — Team Management',
     graphic: '/db90-team.png',
     subtitle: 'Manage 100+ developers with role-based access, activity tracking, and per-user token consumption',
   },
   {
-    id: 24,
+    id: 25,
     sectionTitle: 'DB90 — Project Analytics',
     graphic: '/db90-project.png',
     subtitle: 'Per-project metrics with linked repositories, team assignments, and detailed activity breakdown',
   },
   {
-    id: 25,
+    id: 26,
     sectionTitle: 'DB90 — Developer Profile',
     graphic: '/db90-user.png',
     subtitle: 'Individual contribution tracking — activity heatmaps, tool preferences, model usage, and cost attribution',
   },
   {
-    id: 26,
+    id: 27,
     sectionTitle: 'DB90 — Key Benefits',
     bullets: [
       '50% reduction in development time',
@@ -322,7 +327,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // 3PO LEAD-IN
   {
-    id: 27,
+    id: 28,
     sectionTitle: 'The Legacy Problem',
     bullets: [
       '$1.14 trillion spent annually maintaining legacy systems',
@@ -333,7 +338,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     ],
   },
   {
-    id: 28,
+    id: 29,
     sectionTitle: 'Requirements: The Replatforming Bottleneck',
     content: 'Technical debt costs enterprises $1.52 trillion annually — and most of it is trapped in systems no one fully understands.',
     callouts: [
@@ -347,13 +352,13 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // 3PO SECTION
   {
-    id: 29,
+    id: 30,
     title: 'Introducing',
     titleBold: '3PO',
     subtitle: 'AI-powered requirements that bridge the gap from legacy to modern',
   },
   {
-    id: 30,
+    id: 31,
     sectionTitle: '3PO — How It Works',
     features: [
       { title: 'Code Analysis', description: 'AI scans legacy codebases to extract hidden business logic and dependencies' },
@@ -365,7 +370,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     ],
   },
   {
-    id: 31,
+    id: 32,
     sectionTitle: '3PO — The Impact',
     features: [
       { icon: 'zap', title: '10x Faster Discovery', description: 'Requirements in 6 weeks instead of 6 months' },
@@ -378,7 +383,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // CLOSING
   {
-    id: 32,
+    id: 33,
     sectionTitle: 'Key Takeaways',
     content: 'The future of software development is AI-augmented',
     bullets: [
@@ -390,13 +395,13 @@ const DEFAULT_SLIDES: SlideContent[] = [
     ],
   },
   {
-    id: 33,
+    id: 34,
     title: 'Thank You',
     titleBold: 'Questions?',
     subtitle: 'Let\'s build the future together',
   },
   {
-    id: 34,
+    id: 35,
     sectionTitle: 'Let\'s Connect',
     qrCode: '/linkedin-qr.svg',
     content: 'Billy Boozer',

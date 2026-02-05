@@ -7,7 +7,7 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 // In-memory state (will be synced via broadcast to all clients)
 let currentSlide = 1;
 let theme = 'dark';
-const totalSlides = 34;
+const totalSlides = 35;
 
 export async function POST(request: NextRequest) {
   try {
