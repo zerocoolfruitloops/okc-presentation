@@ -265,6 +265,36 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   {
     id: 20,
+    sectionTitle: 'DB90 — Organization Dashboard',
+    graphic: '/db90-dashboard.jpg',
+    subtitle: 'Real-time visibility into AI tool usage, costs, and trends across your entire engineering organization',
+  },
+  {
+    id: 21,
+    sectionTitle: 'DB90 — Event Tracking',
+    graphic: '/db90-events.jpg',
+    subtitle: 'Every AI interaction logged with tool, type, risk level, user, project, cost, and tokens — full audit trail',
+  },
+  {
+    id: 22,
+    sectionTitle: 'DB90 — Team Management',
+    graphic: '/db90-team.jpg',
+    subtitle: 'Manage 100+ developers with role-based access, activity tracking, and per-user token consumption',
+  },
+  {
+    id: 23,
+    sectionTitle: 'DB90 — Project Analytics',
+    graphic: '/db90-project.jpg',
+    subtitle: 'Per-project metrics with linked repositories, team assignments, and detailed activity breakdown',
+  },
+  {
+    id: 24,
+    sectionTitle: 'DB90 — Developer Profile',
+    graphic: '/db90-user.jpg',
+    subtitle: 'Individual contribution tracking — activity heatmaps, tool preferences, model usage, and cost attribution',
+  },
+  {
+    id: 25,
     sectionTitle: 'DB90 — Key Benefits',
     bullets: [
       '50% reduction in development time',
@@ -276,7 +306,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // 3PO LEAD-IN
   {
-    id: 21,
+    id: 26,
     sectionTitle: 'The Legacy Problem',
     bullets: [
       '$1.14 trillion spent annually maintaining legacy systems',
@@ -287,7 +317,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     ],
   },
   {
-    id: 22,
+    id: 27,
     sectionTitle: 'Requirements: The Replatforming Bottleneck',
     bullets: [
       'Legacy systems: millions of lines, zero documentation',
@@ -299,13 +329,13 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // 3PO SECTION
   {
-    id: 23,
+    id: 28,
     title: 'Introducing',
     titleBold: '3PO',
     subtitle: 'AI-powered requirements that bridge the gap from legacy to modern',
   },
   {
-    id: 24,
+    id: 29,
     sectionTitle: '3PO — How It Works',
     bullets: [
       'AI scans legacy codebases — extracts hidden business logic',
@@ -316,7 +346,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     ],
   },
   {
-    id: 25,
+    id: 30,
     sectionTitle: '3PO — The Impact',
     bullets: [
       'Requirements discovery: 6 months → 6 weeks',
@@ -328,7 +358,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // CLOSING
   {
-    id: 26,
+    id: 31,
     sectionTitle: 'Key Takeaways',
     content: 'The future of software development is AI-augmented',
     bullets: [
@@ -340,13 +370,13 @@ const DEFAULT_SLIDES: SlideContent[] = [
     ],
   },
   {
-    id: 27,
+    id: 32,
     title: 'Thank You',
     titleBold: 'Questions?',
     subtitle: 'Let\'s build the future together',
   },
   {
-    id: 28,
+    id: 33,
     sectionTitle: 'Let\'s Connect',
     qrCode: '/linkedin-qr.svg',
     content: 'Billy Boozer',

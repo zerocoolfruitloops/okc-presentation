@@ -95,16 +95,26 @@ function renderSlide(slide: SlideData, index: number, total: number) {
     );
   }
 
-  // Full graphic slide
+  // Full graphic slide (with optional title/subtitle for screenshots)
   if (slide.graphic) {
+    const hasTitle = slide.sectionTitle && slide.sectionTitle !== '';
     return (
       <Slide key={slide.id}>
-        <div className="graphic-slide">
+        {hasTitle && (
+          <>
+            <SectionTitle>{slide.sectionTitle}</SectionTitle>
+            <Logo />
+          </>
+        )}
+        <div className={hasTitle ? 'screenshot-slide' : 'graphic-slide'}>
           <img 
             src={slide.graphic} 
             alt={slide.sectionTitle || 'Slide graphic'}
-            className="slide-graphic"
+            className={hasTitle ? 'slide-screenshot' : 'slide-graphic'}
           />
+          {slide.subtitle && (
+            <p className="screenshot-caption">{slide.subtitle}</p>
+          )}
         </div>
         <Footer pageNumber={index + 1} />
       </Slide>

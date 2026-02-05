@@ -363,6 +363,41 @@ html, body {
 }
 
 /* ========================================
+   SCREENSHOT SLIDE (titled graphic)
+   ======================================== */
+.screenshot-slide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.slide-screenshot {
+  width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 20px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 100px -20px rgba(59, 130, 246, 0.15);
+}
+
+.screenshot-caption {
+  margin-top: 1.5rem;
+  font-size: 1.35rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+/* ========================================
    CONNECT / QR CODE SLIDE
    ======================================== */
 .connect-card {
