@@ -1289,6 +1289,8 @@ html, body {
 
 .two-column-content {
   flex: 2;
+  position: relative;
+  z-index: 1;
 }
 
 .two-column-content .slide-list {
@@ -1325,6 +1327,9 @@ html, body {
 .two-column-image {
   flex: 1;
   max-width: 500px;
+  transform: scale(2);
+  transform-origin: center right;
+  z-index: 0;
 }
 
 .two-column-image img {
