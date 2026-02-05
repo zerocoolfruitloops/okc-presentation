@@ -379,11 +379,10 @@ html, body {
 }
 
 .screenshot-wrapper {
-  border-radius: 16px;
+  border-radius: 0;
   overflow: hidden;
   background: var(--background);
   box-shadow: 
-    0 0 0 1px rgba(255, 255, 255, 0.08),
     0 25px 60px -15px rgba(0, 0, 0, 0.7),
     0 0 120px -30px rgba(59, 130, 246, 0.2);
 }
