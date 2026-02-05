@@ -76,7 +76,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
       },
       {
         name: 'OpenCode',
-        logo: '/opencode-logo.png',
+        logo: '/opencode-logo.svg',
         url: 'https://opencode.ai',
         description: 'Terminal-native AI coding assistant built for developers who value transparency. Full agentic coding capabilities with local execution, complete audit trails, and zero vendor lock-in.',
         features: ['Runs entirely in your terminal', 'Full codebase understanding', 'Works with any LLM provider'],
