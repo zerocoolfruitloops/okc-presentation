@@ -9,9 +9,12 @@ import {
   Footer,
   Logo 
 } from '@/components/Presentation';
+import { AutoReload } from '@/components/AutoReload';
 
 export default function Home() {
   return (
+    <>
+    <AutoReload />
     <Presentation>
       {/* Slide 1: Title Slide */}
       <Slide>
@@ -82,5 +85,6 @@ export default function Home() {
         <Footer company="Dualboot Partners" title="AI Agents" pageNumber={4} />
       </Slide>
     </Presentation>
+    </>
   );
 }
