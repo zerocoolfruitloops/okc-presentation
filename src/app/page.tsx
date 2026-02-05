@@ -391,6 +391,27 @@ function renderSlide(slide: SlideData, index: number, total: number) {
     );
   }
 
+  // Two-column slide: bullets + image
+  if (slide.sectionTitle && slide.bullets && slide.bullets.length > 0 && slide.image && !slide.content && !slide.role) {
+    return (
+      <Slide key={slide.id}>
+        <SectionTitle>{slide.sectionTitle}</SectionTitle>
+        <Logo />
+        <SlideContent>
+          <div className="two-column-layout">
+            <div className="two-column-content">
+              <SlideList items={slide.bullets} />
+            </div>
+            <div className="two-column-image">
+              <img src={slide.image} alt="" />
+            </div>
+          </div>
+        </SlideContent>
+        <Footer pageNumber={index + 1} />
+      </Slide>
+    );
+  }
+
   // Section slide with bullets
   if (slide.sectionTitle && slide.bullets && slide.bullets.length > 0) {
     return (

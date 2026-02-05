@@ -16,6 +16,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   {
     id: 2,
     sectionTitle: 'My Background',
+    image: '/billy-whitehouse.jpg',
     bullets: [
       'CTO at Dualboot Partners — leading AI & modernization frameworks (DB90, 3PO)',
       'Former CTO at Secure Bancard — modernized payment platform processing ~$3B annually',

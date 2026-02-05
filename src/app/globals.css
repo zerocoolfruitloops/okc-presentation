@@ -1193,6 +1193,51 @@ html, body {
 }
 
 /* ========================================
+   TWO-COLUMN LAYOUT (bullets + image)
+   ======================================== */
+.two-column-layout {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.two-column-content {
+  flex: 1;
+}
+
+.two-column-content .slide-list {
+  text-align: left;
+}
+
+.two-column-image {
+  flex: 0 0 45%;
+  max-width: 500px;
+}
+
+.two-column-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 
+    0 25px 60px -15px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 900px) {
+  .two-column-layout {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+  
+  .two-column-image {
+    max-width: 300px;
+  }
+}
+
+/* ========================================
    PROJECT CARDS (Two-column layout)
    ======================================== */
 .projects-grid {
