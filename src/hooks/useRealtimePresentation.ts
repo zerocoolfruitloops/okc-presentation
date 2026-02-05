@@ -266,31 +266,31 @@ const DEFAULT_SLIDES: SlideContent[] = [
   {
     id: 20,
     sectionTitle: 'DB90 — Organization Dashboard',
-    graphic: '/db90-dashboard.jpg',
+    graphic: '/db90-dashboard.png',
     subtitle: 'Real-time visibility into AI tool usage, costs, and trends across your entire engineering organization',
   },
   {
     id: 21,
     sectionTitle: 'DB90 — Event Tracking',
-    graphic: '/db90-events.jpg',
+    graphic: '/db90-events.png',
     subtitle: 'Every AI interaction logged with tool, type, risk level, user, project, cost, and tokens — full audit trail',
   },
   {
     id: 22,
     sectionTitle: 'DB90 — Team Management',
-    graphic: '/db90-team.jpg',
+    graphic: '/db90-team.png',
     subtitle: 'Manage 100+ developers with role-based access, activity tracking, and per-user token consumption',
   },
   {
     id: 23,
     sectionTitle: 'DB90 — Project Analytics',
-    graphic: '/db90-project.jpg',
+    graphic: '/db90-project.png',
     subtitle: 'Per-project metrics with linked repositories, team assignments, and detailed activity breakdown',
   },
   {
     id: 24,
     sectionTitle: 'DB90 — Developer Profile',
-    graphic: '/db90-user.jpg',
+    graphic: '/db90-user.png',
     subtitle: 'Individual contribution tracking — activity heatmaps, tool preferences, model usage, and cost attribution',
   },
   {
