@@ -124,10 +124,10 @@ export function DB90Diagram() {
   );
 }
 
-// Scale circle size based on percentage (5% = 28px, 40% = 60px)
+// Scale circle size based on percentage (5% = 36px, 40% = 80px)
 function getCircleSize(percent: number): number {
-  const minSize = 28;
-  const maxSize = 60;
+  const minSize = 36;
+  const maxSize = 80;
   const minPercent = 5;
   const maxPercent = 40;
   return minSize + ((percent - minPercent) / (maxPercent - minPercent)) * (maxSize - minSize);
