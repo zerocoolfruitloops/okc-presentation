@@ -426,6 +426,9 @@ function renderSlide(slide: SlideData, index: number, total: number) {
         <SectionTitle>{slide.sectionTitle}</SectionTitle>
         <Logo />
         <SlideContent>
+          {slide.content && (
+            <p className="features-problem-statement">{slide.content}</p>
+          )}
           <div className={hasIcons ? "features-grid features-grid-icons" : "features-grid"}>
             {slide.features.map((feature, i) => (
               <div key={i} className="feature-card">

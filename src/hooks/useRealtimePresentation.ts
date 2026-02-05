@@ -273,12 +273,14 @@ const DEFAULT_SLIDES: SlideContent[] = [
   {
     id: 19,
     sectionTitle: 'What If We Could...',
+    content: 'Legacy systems cost enterprises $1.14 trillion annually in maintenance alone. What if there was a better way?',
     features: [
       { icon: 'zap', title: '50% Faster Development', description: 'Cut development time in half — without cutting corners' },
       { icon: 'brain', title: 'AI-Powered Automation', description: 'Let AI handle the tedious work — humans focus on architecture' },
       { icon: 'shield', title: 'Proactive Quality', description: 'Catch bugs before they ship — not after' },
       { icon: 'rocket', title: 'Scale Without Headcount', description: 'Grow output without growing the team' },
       { icon: 'target', title: 'Hit Deadlines', description: 'Actually deliver on time — consistently' },
+      { icon: 'check', title: 'Modernize Legacy', description: 'Finally make legacy transformation achievable' },
     ],
   },
   // DB90 SECTION
