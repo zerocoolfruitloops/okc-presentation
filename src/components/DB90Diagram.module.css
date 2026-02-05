@@ -5,19 +5,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0c0c12;
 }
 
-/* The diagram - 16:9 aspect ratio */
+/* The diagram - fills available space */
 .diagram {
   width: 100%;
-  max-width: 960px;
-  aspect-ratio: 16 / 9;
-  background: #0c0c12;
+  height: 100%;
   position: relative;
-  padding: 32px 40px;
+  padding: 32px 48px;
   box-sizing: border-box;
   font-family: 'Inter', -apple-system, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Title */
@@ -45,16 +44,18 @@
 /* Main layout - two columns */
 .main {
   display: flex;
-  gap: 24px;
-  height: calc(100% - 60px);
+  gap: 32px;
+  flex: 1;
+  min-height: 0;
 }
 
 /* Left sidebar */
 .sidebar {
-  width: 200px;
+  width: 220px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Description box */
@@ -182,14 +183,16 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 /* Matrix row */
 .row {
   display: grid;
-  grid-template-columns: 28px repeat(5, 1fr);
-  gap: 6px;
+  grid-template-columns: 32px repeat(5, 1fr);
+  gap: 8px;
+  flex: 1;
 }
 
 .rowIcon {
@@ -207,26 +210,28 @@
 /* Phase headers */
 .phase {
   background: #2563eb;
-  border-radius: 6px;
-  padding: 8px 4px;
+  border-radius: 8px;
+  padding: 10px 8px;
   text-align: center;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Standard cell */
 .cell {
-  background: #16161e;
-  border: 1px solid #222230;
-  border-radius: 8px;
-  padding: 8px 6px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 12px 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 40px;
 }
 
 .cell span {
@@ -269,7 +274,7 @@
 /* Connector row */
 .connectorRow {
   align-items: center;
-  min-height: 28px;
+  flex: 0.5;
 }
 
 .connector {
@@ -295,44 +300,45 @@
 
 /* Efficiency row */
 .effRow {
-  margin-top: 4px;
+  flex: 1.2;
 }
 
 .effCell {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  justify-content: center;
+  gap: 4px;
 }
 
 .effBefore {
   background: #2563eb;
   color: #fff;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
 }
 
 .effArrow {
   color: #444;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .effAfter {
   background: rgba(37, 99, 235, 0.15);
   color: #60a5fa;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
 }
 
