@@ -41,7 +41,6 @@ const DEFAULT_SLIDES: SlideContent[] = [
     id: 4,
     title: 'AI Agents 2026:',
     titleBold: 'The Age of the Agent',
-    subtitle: 'What\'s happening in Energy & Banking',
   },
   // OPEN SOURCE AI - Page 1
   {
