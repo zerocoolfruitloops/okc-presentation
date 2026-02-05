@@ -5,6 +5,13 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 export const supabase = createClient(supabaseUrl, supabaseKey);
 
+export type ProjectInfo = {
+  name: string;
+  logo: string;
+  url: string;
+  description: string;
+};
+
 export type SlideContent = {
   id: number;
   title?: string;
@@ -27,6 +34,8 @@ export type SlideContent = {
   qrLabel?: string;
   // Full graphic slide
   graphic?: string;
+  // Project cards
+  projects?: ProjectInfo[];
 };
 
 export type PresentationData = {
