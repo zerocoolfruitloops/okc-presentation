@@ -22,6 +22,9 @@ export type SlideContent = {
   personBio?: string;
   personLinkedIn?: string;
   personTwitter?: string;
+  // QR code fields
+  qrCode?: string;
+  qrLabel?: string;
 };
 
 export type PresentationData = {

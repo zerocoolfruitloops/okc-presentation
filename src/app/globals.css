@@ -331,6 +331,49 @@ html, body {
 }
 
 /* ========================================
+   CONNECT / QR CODE SLIDE
+   ======================================== */
+.connect-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.qr-code {
+  width: 300px;
+  height: 300px;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 60px var(--accent-blue-glow);
+}
+
+.connect-info {
+  text-align: center;
+}
+
+.connect-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.connect-label {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* ========================================
    PERSON TO FOLLOW CARDS
    ======================================== */
 .person-card {

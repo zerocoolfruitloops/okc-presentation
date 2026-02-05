@@ -30,9 +30,36 @@ type SlideData = {
   personBio?: string;
   personLinkedIn?: string;
   personTwitter?: string;
+  // QR code fields
+  qrCode?: string;
+  qrLabel?: string;
 };
 
 function renderSlide(slide: SlideData, index: number, total: number) {
+  // QR code / Connect slide
+  if (slide.qrCode) {
+    return (
+      <Slide key={slide.id}>
+        <SectionTitle>{slide.sectionTitle}</SectionTitle>
+        <Logo />
+        <SlideContent>
+          <div className="connect-card">
+            <img 
+              src={slide.qrCode} 
+              alt="QR Code"
+              className="qr-code"
+            />
+            <div className="connect-info">
+              {slide.content && <h3 className="connect-name">{slide.content}</h3>}
+              {slide.qrLabel && <p className="connect-label">{slide.qrLabel}</p>}
+            </div>
+          </div>
+        </SlideContent>
+        <Footer pageNumber={index + 1} />
+      </Slide>
+    );
+  }
+
   // Person to follow slide
   if (slide.sectionTitle && slide.personName) {
     return (
