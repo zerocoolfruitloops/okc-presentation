@@ -284,6 +284,12 @@ html, body {
   right: 4rem;
 }
 
+.logo img {
+  height: 50px;
+  width: auto;
+  filter: brightness(1.2);
+}
+
 /* ========================================
    NAVIGATION
    ======================================== */
