@@ -338,12 +338,13 @@ const DEFAULT_SLIDES: SlideContent[] = [
   {
     id: 29,
     sectionTitle: '3PO — How It Works',
-    bullets: [
-      'AI scans legacy codebases — extracts hidden business logic',
-      'Natural language to structured requirements in hours, not months',
-      'Auto-generates diagrams, user stories, and test cases',
-      'Maintains traceability from old system to new',
-      'Living documentation that evolves as you modernize',
+    features: [
+      { title: 'Code Analysis', description: 'AI scans legacy codebases to extract hidden business logic and dependencies' },
+      { title: 'Natural Language Input', description: 'Describe requirements in plain English — AI structures them automatically' },
+      { title: 'Auto-Generated Artifacts', description: 'Diagrams, user stories, and test cases created in minutes, not months' },
+      { title: 'Full Traceability', description: 'Every requirement linked from legacy source to new implementation' },
+      { title: 'Living Documentation', description: 'Docs evolve with your codebase — never outdated again' },
+      { title: 'DB90 Integration', description: 'Seamless handoff to development with AI-ready specs' },
     ],
   },
   {

@@ -56,6 +56,11 @@ type SlideData = {
     sublabel?: string;
     icon?: string;
   }[];
+  // Feature grid
+  features?: {
+    title: string;
+    description: string;
+  }[];
 };
 
 function renderSlide(slide: SlideData, index: number, total: number) {
@@ -336,6 +341,27 @@ function renderSlide(slide: SlideData, index: number, total: number) {
                   <span className="callout-label">{callout.label}</span>
                   {callout.sublabel && <span className="callout-sublabel">{callout.sublabel}</span>}
                 </div>
+              </div>
+            ))}
+          </div>
+        </SlideContent>
+        <Footer pageNumber={index + 1} />
+      </Slide>
+    );
+  }
+
+  // Feature grid slide
+  if (slide.sectionTitle && slide.features && slide.features.length > 0) {
+    return (
+      <Slide key={slide.id}>
+        <SectionTitle>{slide.sectionTitle}</SectionTitle>
+        <Logo />
+        <SlideContent>
+          <div className="features-grid">
+            {slide.features.map((feature, i) => (
+              <div key={i} className="feature-card">
+                <h3 className="feature-title">{feature.title}</h3>
+                <p className="feature-description">{feature.description}</p>
               </div>
             ))}
           </div>

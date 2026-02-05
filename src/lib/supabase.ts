@@ -46,6 +46,11 @@ export type SlideContent = {
     sublabel?: string;
     icon?: string;
   }[];
+  // Feature grid
+  features?: {
+    title: string;
+    description: string;
+  }[];
 };
 
 export type PresentationData = {
