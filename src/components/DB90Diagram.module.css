@@ -47,7 +47,7 @@
 .descBox p {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #9ca3af;
+  color: #fff;
   margin: 0;
 }
 
@@ -91,7 +91,7 @@
 
 .legendDesc {
   font-size: 0.95rem;
-  color: #6b7280;
+  color: #fff;
   line-height: 1.4;
 }
 
@@ -106,7 +106,7 @@
 
 .effBar span {
   font-size: 1rem;
-  color: #6b7280;
+  color: #fff;
 }
 
 .effBarTrack {
@@ -151,9 +151,9 @@
 }
 
 .rowIcon svg {
-  width: 28px;
-  height: 28px;
-  fill: #4b5563;
+  width: 40px;
+  height: 40px;
+  fill: #fff;
 }
 
 /* Phase headers */
@@ -200,14 +200,14 @@
 .cellTools span {
   font-size: 0.9rem;
   font-weight: 400;
-  color: #9ca3af;
+  color: #fff;
 }
 
 /* Artifact cell */
 .cellArtifact span {
   font-size: 0.9rem;
   font-weight: 400;
-  color: #9ca3af;
+  color: #fff;
 }
 
 /* Badge */
@@ -284,7 +284,7 @@
 }
 
 .effArrow {
-  color: #4b5563;
+  color: #fff;
   font-size: 1.5rem;
 }
 
