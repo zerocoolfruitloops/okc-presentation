@@ -1444,10 +1444,10 @@ html, body {
 
 .project-features li {
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  font-size: 1.75rem;
   font-weight: 400;
   color: var(--text-secondary);
-  padding: 0.4rem 0 0.4rem 1.5rem;
+  padding: 0.6rem 0 0.6rem 2.25rem;
   position: relative;
 }
 
