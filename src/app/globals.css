@@ -331,6 +331,295 @@ html, body {
 }
 
 /* ========================================
+   DB90 DIAGRAM
+   ======================================== */
+.db90-diagram {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 3rem;
+  box-sizing: border-box;
+}
+
+.db90-header {
+  margin-bottom: 1.5rem;
+}
+
+.db90-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.db90-title em {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.db90-content {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+  min-height: 0;
+}
+
+.db90-left {
+  width: 280px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.db90-description {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.db90-description p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.db90-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.legend-icon {
+  font-size: 1.25rem;
+  width: 28px;
+  text-align: center;
+}
+
+.legend-item strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  margin-bottom: 0.1rem;
+}
+
+.legend-item span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+.db90-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.db90-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.db90-phases {
+  margin-bottom: 0.25rem;
+}
+
+.phase-pill {
+  background: var(--accent-blue);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.db90-cell {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 0.6rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60px;
+}
+
+.db90-cell span {
+  font-size: 0.7rem;
+  line-height: 1.3;
+  color: var(--text-secondary);
+}
+
+.operator-cell {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.operator-cell span {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.tool-cell {
+  min-height: 70px;
+}
+
+.tool-3po {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+}
+
+.tool-badge {
+  background: var(--accent-blue);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.db90-connectors {
+  min-height: 40px;
+  align-items: center;
+}
+
+.connector-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.connector-arrow {
+  color: var(--accent-blue);
+  font-size: 1.25rem;
+}
+
+.connector-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.artifact-cell span {
+  font-size: 0.65rem;
+}
+
+.efficiency-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.eff-before {
+  background: var(--accent-blue);
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.eff-arrow {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.eff-after {
+  background: rgba(74, 222, 128, 0.2);
+  color: #4ade80;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* DB90 Diagram Responsive */
+@media (max-width: 1024px) {
+  .db90-diagram {
+    padding: 1.5rem 2rem;
+  }
+  
+  .db90-left {
+    width: 220px;
+  }
+  
+  .db90-description {
+    padding: 1rem;
+  }
+  
+  .db90-description p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .db90-content {
+    flex-direction: column;
+  }
+  
+  .db90-left {
+    width: 100%;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  .db90-description {
+    flex: 1;
+  }
+  
+  .db90-legend {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  
+  .db90-right {
+    overflow-x: auto;
+  }
+  
+  .db90-row {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .db90-diagram {
+    padding: 1rem;
+  }
+  
+  .db90-left {
+    flex-direction: column;
+  }
+  
+  .db90-legend {
+    grid-template-columns: 1fr;
+  }
+  
+  .db90-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* ========================================
    FULL GRAPHIC SLIDE
    ======================================== */
 .graphic-slide {
