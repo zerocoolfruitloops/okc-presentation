@@ -113,11 +113,21 @@ function renderSlide(slide: SlideData, index: number, total: number) {
           </>
         )}
         <div className={hasTitle ? 'screenshot-slide' : 'graphic-slide'}>
-          <img 
-            src={slide.graphic} 
-            alt={slide.sectionTitle || 'Slide graphic'}
-            className={hasTitle ? 'slide-screenshot' : 'slide-graphic'}
-          />
+          {hasTitle ? (
+            <div className="screenshot-wrapper">
+              <img 
+                src={slide.graphic} 
+                alt={slide.sectionTitle || 'Slide graphic'}
+                className="slide-screenshot"
+              />
+            </div>
+          ) : (
+            <img 
+              src={slide.graphic} 
+              alt={slide.sectionTitle || 'Slide graphic'}
+              className="slide-graphic"
+            />
+          )}
           {slide.subtitle && (
             <p className="screenshot-caption">{slide.subtitle}</p>
           )}
