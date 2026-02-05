@@ -126,7 +126,6 @@ function renderSlide(slide: SlideData, index: number, total: number) {
   // Full graphic slide (with optional title/subtitle for screenshots)
   if (slide.graphic) {
     const hasTitle = slide.sectionTitle && slide.sectionTitle !== '';
-    const isDb90 = slide.graphic.startsWith('/db90-');
     return (
       <Slide key={slide.id}>
         {hasTitle && (
@@ -137,7 +136,7 @@ function renderSlide(slide: SlideData, index: number, total: number) {
         )}
         <div className={hasTitle ? 'screenshot-slide' : 'graphic-slide'}>
           {hasTitle ? (
-            <div className={`screenshot-wrapper ${isDb90 ? 'db90-crop' : ''}`}>
+            <div className="screenshot-wrapper">
               <img 
                 src={slide.graphic} 
                 alt={slide.sectionTitle || 'Slide graphic'}
