@@ -15,6 +15,13 @@ export type SlideContent = {
   content?: string;
   role?: string;
   image?: string;
+  // Person to follow fields
+  personName?: string;
+  personTitle?: string;
+  personCompany?: string;
+  personBio?: string;
+  personLinkedIn?: string;
+  personTwitter?: string;
 };
 
 export type PresentationData = {
