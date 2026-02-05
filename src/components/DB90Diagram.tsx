@@ -6,18 +6,6 @@ export function DB90Diagram() {
   return (
     <div className={styles.container}>
       <div className={styles.diagram}>
-        {/* Title */}
-        <h1 className={styles.title}>
-          <span>DB90: Build faster, <em>build better</em></span>
-          <svg className={styles.targetIcon} width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.5">
-            <circle cx="14" cy="14" r="10"/>
-            <line x1="14" y1="1" x2="14" y2="7"/>
-            <line x1="14" y1="21" x2="14" y2="27"/>
-            <line x1="1" y1="14" x2="7" y2="14"/>
-            <line x1="21" y1="14" x2="27" y2="14"/>
-          </svg>
-        </h1>
-
         <div className={styles.main}>
           {/* Left Sidebar */}
           <div className={styles.sidebar}>
@@ -65,12 +53,6 @@ export function DB90Diagram() {
               </div>
             </div>
 
-            <div className={styles.brand}>
-              <div className={styles.brandIcon}>
-                <svg viewBox="0 0 32 32"><circle cx="10" cy="16" r="4"/><circle cx="22" cy="16" r="4"/></svg>
-              </div>
-              <span className={styles.brandText}>Dualboot Partners</span>
-            </div>
           </div>
 
           {/* Matrix */}
@@ -140,8 +122,6 @@ export function DB90Diagram() {
             </div>
           </div>
         </div>
-
-        <div className={styles.pageNum}>22</div>
       </div>
     </div>
   );

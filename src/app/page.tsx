@@ -43,7 +43,10 @@ function renderSlide(slide: SlideData, index: number, total: number) {
   if (slide.graphic === '/db90-diagram.jpg' || slide.graphic === 'db90') {
     return (
       <Slide key={slide.id}>
+        <SectionTitle>DB90: Build faster, <em style={{ fontFamily: 'Playfair Display, serif', fontWeight: 400 }}>build better</em></SectionTitle>
+        <Logo />
         <DB90Diagram />
+        <Footer pageNumber={index + 1} />
       </Slide>
     );
   }
