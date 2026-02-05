@@ -62,6 +62,11 @@ type SlideData = {
     description: string;
     icon?: string;
   }[];
+  // Grid items (2x2)
+  gridItems?: {
+    title: string;
+    description: string;
+  }[];
 };
 
 function renderSlide(slide: SlideData, index: number, total: number) {
@@ -384,6 +389,34 @@ function renderSlide(slide: SlideData, index: number, total: number) {
                 <p className="feature-description">{feature.description}</p>
               </div>
             ))}
+          </div>
+        </SlideContent>
+        <Footer pageNumber={index + 1} />
+      </Slide>
+    );
+  }
+
+  // Two-column slide: image + grid items
+  if (slide.sectionTitle && slide.gridItems && slide.gridItems.length > 0 && slide.image) {
+    return (
+      <Slide key={slide.id}>
+        <SectionTitle>{slide.sectionTitle}</SectionTitle>
+        <Logo />
+        <SlideContent>
+          <div className="two-column-layout">
+            <div className="two-column-image">
+              <img src={slide.image} alt="" />
+            </div>
+            <div className="two-column-content">
+              <div className="bio-grid">
+                {slide.gridItems.map((item, i) => (
+                  <div key={i} className="bio-grid-item">
+                    <h4 className="bio-grid-title">{item.title}</h4>
+                    <p className="bio-grid-desc">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </SlideContent>
         <Footer pageNumber={index + 1} />

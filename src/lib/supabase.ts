@@ -52,6 +52,11 @@ export type SlideContent = {
     description: string;
     icon?: string;
   }[];
+  // Grid items (2x2)
+  gridItems?: {
+    title: string;
+    description: string;
+  }[];
 };
 
 export type PresentationData = {

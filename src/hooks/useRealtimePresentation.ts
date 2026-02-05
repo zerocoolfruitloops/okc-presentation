@@ -17,12 +17,11 @@ const DEFAULT_SLIDES: SlideContent[] = [
     id: 2,
     sectionTitle: 'My Background',
     image: '/billy-whitehouse.jpg',
-    bullets: [
-      'CTO at Dualboot Partners — leading AI & modernization frameworks (DB90, 3PO)',
-      'Former CTO at Secure Bancard — modernized payment platform processing ~$3B annually',
-      'Former CPO at Truth Social — launched #1 free app & #1 social network in App Store',
-      'Built systems across payments, social platforms, AI, crypto, and enterprise modernization',
-      'I build technology with weight — systems that matter and hold up under real-world conditions',
+    gridItems: [
+      { title: 'Dualboot Partners', description: 'CTO — leading AI & modernization frameworks (DB90, 3PO)' },
+      { title: 'Secure Bancard', description: 'Former CTO — modernized payment platform processing ~$3B annually' },
+      { title: 'Truth Social', description: 'Former CPO — launched #1 free app & #1 social network in App Store' },
+      { title: 'Full Stack Builder', description: 'Payments, social platforms, AI, crypto, and enterprise modernization' },
     ],
   },
   {
