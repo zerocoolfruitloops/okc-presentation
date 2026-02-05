@@ -1215,25 +1215,25 @@ html, body {
 .bio-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .bio-grid-item {
-  padding: 1.25rem;
+  padding: 1.75rem;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
 }
 
 .bio-grid-title {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--accent-blue-bright);
   margin: 0 0 0.5rem 0;
 }
 
 .bio-grid-desc {
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: var(--text-secondary);
   line-height: 1.5;
   margin: 0;
