@@ -114,14 +114,57 @@ export function DB90Diagram() {
             {/* Efficiency */}
             <div className={`${styles.row} ${styles.effRow}`}>
               <div className={styles.rowIcon}><ChartIcon/></div>
-              <div className={styles.effCell}><div className={styles.effBefore}>15%</div><div className={styles.effArrow}>↓</div><div className={styles.effAfter}>5%</div></div>
-              <div className={styles.effCell}><div className={styles.effBefore}>20%</div><div className={styles.effArrow}>↓</div><div className={styles.effAfter}>10%</div></div>
-              <div className={styles.effCell}><div className={styles.effBefore}>40%</div><div className={styles.effArrow}>↓</div><div className={styles.effAfter}>15%</div></div>
-              <div className={styles.effCell}><div className={styles.effBefore}>20%</div><div className={styles.effArrow}>↓</div><div className={styles.effAfter}>15%</div></div>
-              <div className={styles.effCell}><div className={styles.effBefore}>5%</div><div className={styles.effArrow}>↓</div><div className={styles.effAfter}>5%</div></div>
+              <EffCell before={15} after={5} />
+              <EffCell before={20} after={10} />
+              <EffCell before={40} after={15} />
+              <EffCell before={20} after={15} />
+              <EffCell before={5} after={5} />
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+// Scale circle size based on percentage (5% = 36px, 40% = 80px)
+function getCircleSize(percent: number): number {
+  const minSize = 36;
+  const maxSize = 80;
+  const minPercent = 5;
+  const maxPercent = 40;
+  return minSize + ((percent - minPercent) / (maxPercent - minPercent)) * (maxSize - minSize);
+}
+
+function EffCell({ before, after }: { before: number; after: number }) {
+  const beforeSize = getCircleSize(before);
+  const afterSize = getCircleSize(after);
+  // Scale font size proportionally
+  const beforeFont = Math.max(0.85, beforeSize / 65);
+  const afterFont = Math.max(0.85, afterSize / 65);
+  
+  return (
+    <div className={styles.effCell}>
+      <div 
+        className={styles.effBefore} 
+        style={{ 
+          width: beforeSize, 
+          height: beforeSize,
+          fontSize: `${beforeFont}rem`
+        }}
+      >
+        {before}%
+      </div>
+      <div className={styles.effArrow}>↓</div>
+      <div 
+        className={styles.effAfter}
+        style={{ 
+          width: afterSize, 
+          height: afterSize,
+          fontSize: `${afterFont}rem`
+        }}
+      >
+        {after}%
       </div>
     </div>
   );
