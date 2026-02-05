@@ -229,19 +229,42 @@ const DEFAULT_SLIDES: SlideContent[] = [
     personTwitter: 'https://x.com/DanielaAmodei',
     image: '/daniela-amodei.jpg',
   },
-  // DB90 SECTION
+  // DB90 LEAD-IN
   {
     id: 16,
+    sectionTitle: 'The Development Problem',
+    bullets: [
+      'Average enterprise project: 6-12 months, 2-3x over budget',
+      '70% of software projects fail to meet expectations',
+      'Developer burnout at all-time highs',
+      'Repetitive tasks consume 40% of engineering time',
+      'Quality suffers under deadline pressure',
+    ],
+  },
+  {
+    id: 17,
+    sectionTitle: 'What If We Could...',
+    bullets: [
+      'Cut development time in half — without cutting corners',
+      'Let AI handle the tedious work — humans focus on architecture',
+      'Catch bugs before they ship — not after',
+      'Scale teams without scaling headcount',
+      'Actually hit deadlines — consistently',
+    ],
+  },
+  // DB90 SECTION
+  {
+    id: 18,
     title: 'Introducing',
     titleBold: 'DB90',
     subtitle: 'AI-augmented software development that delivers 50% efficiency gains',
   },
   {
-    id: 17,
+    id: 19,
     graphic: 'db90',
   },
   {
-    id: 18,
+    id: 20,
     sectionTitle: 'DB90 — Key Benefits',
     bullets: [
       '50% reduction in development time',
@@ -251,38 +274,61 @@ const DEFAULT_SLIDES: SlideContent[] = [
       'Scalable across all SDLC phases',
     ],
   },
-  // 3PO SECTION
+  // 3PO LEAD-IN
   {
-    id: 19,
-    title: 'Introducing',
-    titleBold: '3PO',
-    subtitle: 'AI-powered requirements that bridge the gap from idea to code',
-  },
-  {
-    id: 20,
-    sectionTitle: '3PO — How It Works',
+    id: 21,
+    sectionTitle: 'The Legacy Problem',
     bullets: [
-      'Natural language to structured requirements',
-      'Automatic diagram and backlog generation',
-      'Connects requirements to development workflow',
-      'Reduces handoff friction between teams',
-      'Maintains traceability from idea to deployment',
+      '$1.14 trillion spent annually maintaining legacy systems',
+      'COBOL still powers 95% of ATM transactions',
+      '43% of US banks run on systems built before 1990',
+      'Knowledge retiring with the workforce — average COBOL dev is 55+',
+      '"Too risky to touch, too expensive to replace"',
     ],
   },
   {
-    id: 21,
+    id: 22,
+    sectionTitle: 'Requirements: The Replatforming Bottleneck',
+    bullets: [
+      'Legacy systems: millions of lines, zero documentation',
+      'Business logic buried in 30-year-old code comments',
+      'Tribal knowledge walks out the door every retirement',
+      'Traditional discovery takes 6-18 months per system',
+      'By the time you understand it, requirements have changed',
+    ],
+  },
+  // 3PO SECTION
+  {
+    id: 23,
+    title: 'Introducing',
+    titleBold: '3PO',
+    subtitle: 'AI-powered requirements that bridge the gap from legacy to modern',
+  },
+  {
+    id: 24,
+    sectionTitle: '3PO — How It Works',
+    bullets: [
+      'AI scans legacy codebases — extracts hidden business logic',
+      'Natural language to structured requirements in hours, not months',
+      'Auto-generates diagrams, user stories, and test cases',
+      'Maintains traceability from old system to new',
+      'Living documentation that evolves as you modernize',
+    ],
+  },
+  {
+    id: 25,
     sectionTitle: '3PO — The Impact',
     bullets: [
-      'Requirements phase reduced from 15% to 5% of project time',
-      'Fewer misunderstandings between stakeholders and developers',
-      'Living documentation that evolves with the project',
-      'AI suggests edge cases humans often miss',
-      'Seamless integration with DB90 workflow',
+      'Requirements discovery: 6 months → 6 weeks',
+      'Captures tribal knowledge before it\'s gone',
+      'Reduces replatforming risk with AI-verified completeness',
+      'Seamless handoff to DB90 for accelerated development',
+      'Finally makes legacy modernization achievable',
     ],
   },
   // CLOSING
   {
-    id: 22,
+    id: 26,
     sectionTitle: 'Key Takeaways',
     content: 'The future of software development is AI-augmented',
     bullets: [
@@ -294,13 +340,13 @@ const DEFAULT_SLIDES: SlideContent[] = [
     ],
   },
   {
-    id: 23,
+    id: 27,
     title: 'Thank You',
     titleBold: 'Questions?',
     subtitle: 'Let\'s build the future together',
   },
   {
-    id: 24,
+    id: 28,
     sectionTitle: 'Let\'s Connect',
     qrCode: '/linkedin-qr.svg',
     content: 'Billy Boozer',
