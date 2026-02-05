@@ -10,17 +10,18 @@ const DEFAULT_SLIDES: SlideContent[] = [
     id: 1,
     sectionTitle: 'About me',
     content: 'Billy Boozer',
-    role: 'Product Leader • Technology Executive',
+    role: 'Chief Technology Officer • Dualboot Partners',
     image: '/billy.png',
   },
   {
     id: 2,
     sectionTitle: 'My Background',
     bullets: [
-      '15+ years leading product, engineering & technology teams',
-      'Built fintech and payment platforms at scale',
-      'Helped launch Truth Social (#1 free app in App Store)',
-      'Technology advisor to startups and Fortune 500 companies',
+      'CTO at Dualboot Partners — leading AI & modernization frameworks (DB90, 3PO)',
+      'Former CTO at Secure Bancard — modernized payment platform processing ~$3B annually',
+      'Former CPO at Truth Social — scaled product, engineering & AI/ML moderation to 40+ team',
+      'Built systems across payments, social platforms, AI, crypto, and enterprise modernization',
+      'I build technology with weight — systems that matter and hold up under real-world conditions',
     ],
   },
   {
