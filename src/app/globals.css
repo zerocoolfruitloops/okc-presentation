@@ -436,6 +436,17 @@ html, body {
     0 0 120px -30px rgba(59, 130, 246, 0.2);
 }
 
+.screenshot-wrapper.db90-crop {
+  max-height: 50vh;
+}
+
+.screenshot-wrapper.db90-crop .slide-screenshot {
+  object-fit: cover;
+  object-position: top;
+  height: 50vh;
+  max-height: none;
+}
+
 .slide-screenshot {
   display: block;
   width: 100%;
