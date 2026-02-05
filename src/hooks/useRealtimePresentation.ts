@@ -19,7 +19,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     bullets: [
       'CTO at Dualboot Partners — leading AI & modernization frameworks (DB90, 3PO)',
       'Former CTO at Secure Bancard — modernized payment platform processing ~$3B annually',
-      'Former CPO at Truth Social — scaled product, engineering & AI/ML moderation to 40+ team',
+      'Former CPO at Truth Social — launched #1 free app & #1 social network in App Store',
       'Built systems across payments, social platforms, AI, crypto, and enterprise modernization',
       'I build technology with weight — systems that matter and hold up under real-world conditions',
     ],
