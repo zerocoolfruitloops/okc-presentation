@@ -67,6 +67,14 @@ type SlideData = {
     title: string;
     description: string;
   }[];
+  // Legacy tech cards (stacked layout)
+  legacyCards?: {
+    name: string;
+    logo?: string;
+    icon?: string;
+    description: string;
+    meta: string;
+  }[];
 };
 
 function renderSlide(slide: SlideData, index: number, total: number) {
