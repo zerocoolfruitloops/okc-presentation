@@ -29,10 +29,10 @@ const DEFAULT_SLIDES: SlideContent[] = [
     sectionTitle: 'The tech behind Truth',
     image: '/billy-trump.jpg',
     gridItems: [
-      { title: 'Truth Social', description: 'Chief Product Officer — launched #1 free app in the App Store' },
-      { title: 'Mastodon Fork', description: 'Scaled decentralized social architecture to millions of users' },
-      { title: 'Real-Time Infrastructure', description: 'Built systems handling massive traffic spikes on launch day' },
-      { title: 'Content Moderation', description: 'AI-assisted moderation at scale with human oversight' },
+      { title: 'Mastodon + Elixir (Pleroma)', description: 'Forked and scaled decentralized social architecture' },
+      { title: '7 Datacenters', description: 'US & Canada infrastructure on OpenStack & CloudStack' },
+      { title: 'Head of NLP from SIRI', description: 'Hired to lead all ML and content moderation' },
+      { title: '392M Uniques Day One', description: 'Traffic on the day we announced Truth Social' },
     ],
   },
   {
