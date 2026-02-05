@@ -60,16 +60,29 @@ const DEFAULT_SLIDES: SlideContent[] = [
         description: 'Framework for orchestrating autonomous AI agents that work together. Define roles, goals, and tools for each agent to collaborate on complex tasks.',
       },
       {
-        name: 'OpenDevin',
-        logo: '/opendevin-logo.png',
-        url: 'https://github.com/OpenDevin/OpenDevin',
-        description: 'Open-source AI software engineer that can write code, debug, and execute tasks. Replicates Devin\'s capabilities with full transparency and customization.',
+        name: 'OpenCode',
+        logo: '/opencode-logo.png',
+        url: 'https://opencode.ai',
+        description: 'Open-source AI coding assistant that runs in your terminal. Agentic coding with full transparency, local execution, and no vendor lock-in.',
+      },
+    ],
+  },
+  // OPEN SOURCE AI - Page 3
+  {
+    id: 6,
+    sectionTitle: 'Open Source AI Tools',
+    projects: [
+      {
+        name: 'Temporal',
+        logo: '/temporal-logo.png',
+        url: 'https://temporal.io',
+        description: 'Durable execution platform for building reliable distributed systems. Perfect for orchestrating long-running AI workflows with fault tolerance and visibility.',
       },
     ],
   },
   // CLOSED SOURCE AI - Page 1
   {
-    id: 6,
+    id: 7,
     sectionTitle: 'Closed Source AI',
     projects: [
       {
@@ -88,7 +101,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // CLOSED SOURCE AI - Page 2
   {
-    id: 7,
+    id: 8,
     sectionTitle: 'Closed Source AI',
     projects: [
       {
@@ -107,7 +120,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // CLOSED SOURCE AI - Page 3
   {
-    id: 8,
+    id: 9,
     sectionTitle: 'Closed Source AI',
     projects: [
       {
@@ -117,16 +130,35 @@ const DEFAULT_SLIDES: SlideContent[] = [
         description: 'AI-first code editor built on VS Code. Features AI-powered autocomplete, chat, and codebase understanding that learns your project\'s patterns.',
       },
       {
-        name: 'Amp',
-        logo: '/amp-logo.png',
-        url: 'https://sourcegraph.com/amp',
-        description: 'Frontier AI coding agent by Sourcegraph. Ships entire features autonomously while you sleep, handling everything from planning to pull requests.',
+        name: 'OpenRouter',
+        logo: '/openrouter-logo.png',
+        url: 'https://openrouter.ai',
+        description: 'Unified API for accessing all major LLMs. One integration for GPT-4, Claude, Gemini, Llama, and more with automatic fallbacks and cost optimization.',
+      },
+    ],
+  },
+  // CLOSED SOURCE AI - Page 4 (AWS)
+  {
+    id: 10,
+    sectionTitle: 'Closed Source AI',
+    projects: [
+      {
+        name: 'Amazon Bedrock',
+        logo: '/aws-logo.png',
+        url: 'https://aws.amazon.com/bedrock',
+        description: 'Fully managed service for building generative AI applications. Access foundation models from Amazon, Anthropic, Meta, and others through a single API.',
+      },
+      {
+        name: 'Amazon Q',
+        logo: '/aws-logo.png',
+        url: 'https://aws.amazon.com/q',
+        description: 'AI-powered assistant for software development and business intelligence. Integrates with AWS services, answers questions, and generates code.',
       },
     ],
   },
   // PEOPLE TO FOLLOW
   {
-    id: 9,
+    id: 11,
     sectionTitle: 'Who to Follow',
     personName: 'Ryan Carson',
     personTitle: 'Builder in Residence',
@@ -137,7 +169,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     image: '/ryan-carson.jpg',
   },
   {
-    id: 10,
+    id: 12,
     sectionTitle: 'Who to Follow',
     personName: 'Boris Cherny',
     personTitle: 'Creator of Claude Code',
@@ -148,7 +180,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     image: '/boris-cherny.jpg',
   },
   {
-    id: 11,
+    id: 13,
     sectionTitle: 'Who to Follow',
     personName: 'Andrej Karpathy',
     personTitle: 'AI Researcher & Educator',
@@ -158,7 +190,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     image: '/andrej-karpathy.jpg',
   },
   {
-    id: 12,
+    id: 14,
     sectionTitle: 'Who to Follow — Energy',
     personName: 'Darryl Willis',
     personTitle: 'Corporate Vice President, Energy & Resources',
@@ -168,7 +200,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     image: '/darryl-willis.jpg',
   },
   {
-    id: 13,
+    id: 15,
     sectionTitle: 'Who to Follow — AI Leadership',
     personName: 'Daniela Amodei',
     personTitle: 'President & Co-Founder',
@@ -179,17 +211,17 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // DB90 SECTION
   {
-    id: 14,
+    id: 16,
     title: 'Introducing',
     titleBold: 'DB90',
     subtitle: 'AI-augmented software development that delivers 50% efficiency gains',
   },
   {
-    id: 15,
+    id: 17,
     graphic: 'db90',
   },
   {
-    id: 16,
+    id: 18,
     sectionTitle: 'DB90 — Key Benefits',
     bullets: [
       '50% reduction in development time',
@@ -201,13 +233,13 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // 3PO SECTION
   {
-    id: 17,
+    id: 19,
     title: 'Introducing',
     titleBold: '3PO',
     subtitle: 'AI-powered requirements that bridge the gap from idea to code',
   },
   {
-    id: 18,
+    id: 20,
     sectionTitle: '3PO — How It Works',
     bullets: [
       'Natural language to structured requirements',
@@ -218,7 +250,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     ],
   },
   {
-    id: 19,
+    id: 21,
     sectionTitle: '3PO — The Impact',
     bullets: [
       'Requirements phase reduced from 15% to 5% of project time',
@@ -230,7 +262,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // CLOSING
   {
-    id: 20,
+    id: 22,
     sectionTitle: 'Key Takeaways',
     content: 'The future of software development is AI-augmented',
     bullets: [
@@ -242,13 +274,13 @@ const DEFAULT_SLIDES: SlideContent[] = [
     ],
   },
   {
-    id: 21,
+    id: 23,
     title: 'Thank You',
     titleBold: 'Questions?',
     subtitle: 'Let\'s build the future together',
   },
   {
-    id: 22,
+    id: 24,
     sectionTitle: 'Let\'s Connect',
     qrCode: '/linkedin-qr.svg',
     content: 'Billy Boozer',
