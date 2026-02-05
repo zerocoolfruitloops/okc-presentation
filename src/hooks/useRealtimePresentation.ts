@@ -148,7 +148,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
       },
       {
         name: 'OpenRouter',
-        logo: '/openrouter-logo.png',
+        logo: '/openrouter-logo.jpg',
         url: 'https://openrouter.ai',
         description: 'The smart router for LLMs. Single API to access GPT-4, Claude, Gemini, Llama, Mistral and 100+ models with automatic fallbacks, rate limit handling, and unified billing.',
         features: ['100+ models, one API', 'Automatic fallbacks & retries', 'Pay-per-token, no commitments'],
