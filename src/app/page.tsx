@@ -551,10 +551,12 @@ export default function Home() {
   }, [theme]);
 
   return (
-    <Presentation status={status} currentSlide={currentSlide}>
-      {slides.map((slide, index) => renderSlide(slide as SlideData, index, slides.length))}
+    <>
+      <Presentation status={status} currentSlide={currentSlide}>
+        {slides.map((slide, index) => renderSlide(slide as SlideData, index, slides.length))}
+      </Presentation>
       
-      {/* Theme Toggle Button */}
+      {/* Theme Toggle Button - outside Presentation so it doesn't count as a slide */}
       <button 
         onClick={toggleTheme}
         className="theme-toggle"
@@ -562,6 +564,6 @@ export default function Home() {
       >
         {theme === 'dark' ? '☀️' : '🌙'}
       </button>
-    </Presentation>
+    </>
   );
 }
