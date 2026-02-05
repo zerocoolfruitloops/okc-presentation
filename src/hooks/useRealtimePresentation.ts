@@ -26,8 +26,14 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   {
     id: 3,
-    sectionTitle: 'My Background',
-    graphic: '/billy-trump.jpg',
+    sectionTitle: 'The tech behind Truth',
+    image: '/billy-trump.jpg',
+    gridItems: [
+      { title: 'Truth Social', description: 'Chief Product Officer — launched #1 free app in the App Store' },
+      { title: 'Mastodon Fork', description: 'Scaled decentralized social architecture to millions of users' },
+      { title: 'Real-Time Infrastructure', description: 'Built systems handling massive traffic spikes on launch day' },
+      { title: 'Content Moderation', description: 'AI-assisted moderation at scale with human oversight' },
+    ],
   },
   {
     id: 4,
