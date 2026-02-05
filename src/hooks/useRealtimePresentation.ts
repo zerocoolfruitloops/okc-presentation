@@ -9,7 +9,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     id: 1,
     sectionTitle: 'About me',
     content: 'Billy Boozer',
-    role: 'Product Leader • Technology Executive • Faith-Driven Founder',
+    role: 'Product Leader • Technology Executive',
     image: '/billy.png',
   },
   {
