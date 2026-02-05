@@ -1380,6 +1380,9 @@ html, body {
 .two-column-image img {
   width: 100%;
   height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  object-position: center;
   border-radius: 16px;
   box-shadow: 
     0 25px 60px -15px rgba(0, 0, 0, 0.5),
