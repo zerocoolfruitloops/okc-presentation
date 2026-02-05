@@ -324,12 +324,16 @@ function renderSlide(slide: SlideData, index: number, total: number) {
       brain: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12,2 C8.1,2 5,5.1 5,9 C5,11.4 6.2,13.5 8,14.7 L8,22 L16,22 L16,14.7 C17.8,13.5 19,11.4 19,9 C19,5.1 15.9,2 12,2 Z"/><line x1="9" y1="22" x2="15" y2="22"/><line x1="10" y1="2" x2="10" y2="7"/><line x1="14" y1="2" x2="14" y2="7"/></svg>,
     };
     
+    const isThreeColumn = slide.callouts.length === 6;
     return (
       <Slide key={slide.id}>
         <SectionTitle>{slide.sectionTitle}</SectionTitle>
         <Logo />
         <SlideContent>
-          <div className="callouts-grid">
+          {slide.content && (
+            <p className="callouts-problem-statement">{slide.content}</p>
+          )}
+          <div className={isThreeColumn ? 'callouts-grid callouts-grid-3' : 'callouts-grid'}>
             {slide.callouts.map((callout, i) => (
               <div key={i} className="callout-card">
                 {callout.icon && icons[callout.icon] ? (

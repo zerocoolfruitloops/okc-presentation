@@ -320,12 +320,14 @@ const DEFAULT_SLIDES: SlideContent[] = [
   {
     id: 27,
     sectionTitle: 'Requirements: The Replatforming Bottleneck',
+    content: 'Technical debt costs enterprises $1.52 trillion annually — and most of it is trapped in systems no one fully understands.',
     callouts: [
-      { icon: 'database', stat: '', label: 'Millions of lines, zero documentation', sublabel: 'Legacy systems are black boxes' },
-      { icon: 'code', stat: '', label: 'Business logic buried in code', sublabel: '30-year-old comments are the only docs' },
-      { icon: 'users', stat: '', label: 'Tribal knowledge walks out the door', sublabel: 'Every retirement loses critical context' },
-      { icon: 'clock', stat: '', label: 'Discovery takes 6-18 months', sublabel: 'Per system, before writing a single line' },
-      { icon: 'refresh', stat: '', label: 'Requirements change mid-flight', sublabel: 'By the time you understand it, it\'s outdated' },
+      { icon: 'database', stat: '', label: 'Millions of lines, zero docs', sublabel: 'Legacy systems are black boxes' },
+      { icon: 'code', stat: '', label: 'Logic buried in code', sublabel: '30-year-old comments are the only docs' },
+      { icon: 'users', stat: '', label: 'Tribal knowledge leaving', sublabel: 'Every retirement loses critical context' },
+      { icon: 'clock', stat: '', label: '6-18 month discovery', sublabel: 'Per system, before writing code' },
+      { icon: 'refresh', stat: '', label: 'Requirements drift', sublabel: 'Outdated before you understand it' },
+      { icon: 'alert', stat: '', label: 'Modernization paralysis', sublabel: '"Too risky to touch, too costly to replace"' },
     ],
   },
   // 3PO SECTION
