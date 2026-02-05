@@ -68,7 +68,7 @@ export function Footer({
 export function Logo() {
   return (
     <div className="logo">
-      <img src="/dualboot-logo.svg" alt="Dualboot Partners" style={{ height: '28px', width: 'auto' }} />
+      <img src="/dualboot-logo.svg" alt="Dualboot Partners" style={{ height: '50px', width: 'auto', filter: 'brightness(1.2)' }} />
     </div>
   );
 }
