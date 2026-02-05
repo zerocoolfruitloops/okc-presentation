@@ -77,35 +77,28 @@ export function DB90Diagram() {
               <div className={styles.cell}><span>DevOps</span><span>Engineer</span></div>
             </div>
 
-            {/* AI Tools + Connectors - 3PO spans both rows in first column */}
-            <div className={styles.toolsConnectorWrapper}>
+            {/* AI Tools */}
+            <div className={styles.row}>
               <div className={styles.rowIcon}><WrenchIcon/></div>
-              
-              {/* 3PO spanning box (AI Tools + Connector for Requirements) */}
-              <div className={styles.cell3poSpan}>
-                <div className={styles.cell3poTop}><span className={styles.badge}>3PO</span></div>
-                <div className={styles.cell3poBottom}>↕</div>
-              </div>
-              
-              {/* Other columns - AI Tools row */}
-              <div className={styles.toolsColumn}>
-                <div className={`${styles.cell} ${styles.cellTools}`}><span>UXPilot</span><span>Figma</span></div>
+              <div className={`${styles.cell} ${styles.cell3po}`}><span className={styles.badge}>3PO</span></div>
+              <div className={`${styles.cell} ${styles.cellTools}`}><span>UXPilot</span><span>Figma</span></div>
+              <div className={`${styles.cell} ${styles.cellTools}`}><span>Cursor</span><span>CoPilot</span><span>WindSurf</span><span>CodeWhisperer</span></div>
+              <div className={`${styles.cell} ${styles.cellTools}`}><span>BrowserStack</span><span>Testim</span><span>Playwright</span><span>Cypress</span></div>
+              <div className={`${styles.cell} ${styles.cellTools}`}><span>AWS</span><span>Azure</span><span>GCP</span><span>Terraform</span></div>
+            </div>
+
+            {/* Connectors - blue border spans entire row */}
+            <div className={`${styles.row} ${styles.connectorRow}`}>
+              <div className={styles.rowIcon}/>
+              <div className={styles.connectorSpan}>
                 <div className={styles.connector}>↕</div>
-              </div>
-              <div className={styles.toolsColumn}>
-                <div className={`${styles.cell} ${styles.cellTools}`}><span>Cursor</span><span>CoPilot</span><span>WindSurf</span><span>CodeWhisperer</span></div>
+                <div className={styles.connector}>↕</div>
                 <div className={styles.connectorCenter}>
                   <div className={styles.connectorLine}/>
                   <span className={styles.badge}>3PO</span>
                   <div className={styles.connectorLine}/>
                 </div>
-              </div>
-              <div className={styles.toolsColumn}>
-                <div className={`${styles.cell} ${styles.cellTools}`}><span>BrowserStack</span><span>Testim</span><span>Playwright</span><span>Cypress</span></div>
                 <div className={styles.connector}>↕</div>
-              </div>
-              <div className={styles.toolsColumn}>
-                <div className={`${styles.cell} ${styles.cellTools}`}><span>AWS</span><span>Azure</span><span>GCP</span><span>Terraform</span></div>
                 <div className={styles.connector}>↕</div>
               </div>
             </div>
