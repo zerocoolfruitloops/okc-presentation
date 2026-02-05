@@ -77,29 +77,32 @@ export function DB90Diagram() {
               <div className={styles.cell}><span>DevOps</span><span>Engineer</span></div>
             </div>
 
-            {/* AI Tools */}
-            <div className={styles.row}>
+            {/* AI Tools + Connectors with L-shape */}
+            <div className={styles.toolsConnectorSection}>
               <div className={styles.rowIcon}><WrenchIcon/></div>
-              <div className={styles.cell3poTop}><span className={styles.badge}>3PO</span></div>
-              <div className={`${styles.cell} ${styles.cellTools}`}><span>UXPilot</span><span>Figma</span></div>
-              <div className={`${styles.cell} ${styles.cellTools}`}><span>Cursor</span><span>CoPilot</span><span>WindSurf</span><span>CodeWhisperer</span></div>
-              <div className={`${styles.cell} ${styles.cellTools}`}><span>BrowserStack</span><span>Testim</span><span>Playwright</span><span>Cypress</span></div>
-              <div className={`${styles.cell} ${styles.cellTools}`}><span>AWS</span><span>Azure</span><span>GCP</span><span>Terraform</span></div>
-            </div>
-
-            {/* Connectors */}
-            <div className={`${styles.row} ${styles.connectorRow}`}>
-              <div className={styles.rowIcon}/>
-              <div className={styles.connectorSpan}>
-                <div className={styles.connector}>↕</div>
-                <div className={styles.connector}>↕</div>
-                <div className={styles.connectorCenter}>
-                  <div className={styles.connectorLine}/>
-                  <span className={styles.badge}>3PO</span>
-                  <div className={styles.connectorLine}/>
+              
+              {/* L-shaped 3PO wrapper */}
+              <div className={styles.lWrapper}>
+                <div className={styles.lTop}><span className={styles.badge}>3PO</span></div>
+                <div className={styles.lBottom}>
+                  <div className={styles.connector}>↕</div>
+                  <div className={styles.connector}>↕</div>
+                  <div className={styles.connectorCenter}>
+                    <div className={styles.connectorLine}/>
+                    <span className={styles.badge}>3PO</span>
+                    <div className={styles.connectorLine}/>
+                  </div>
+                  <div className={styles.connector}>↕</div>
+                  <div className={styles.connector}>↕</div>
                 </div>
-                <div className={styles.connector}>↕</div>
-                <div className={styles.connector}>↕</div>
+              </div>
+              
+              {/* Other tool cells - positioned in top row only */}
+              <div className={styles.toolCells}>
+                <div className={`${styles.cell} ${styles.cellTools}`}><span>UXPilot</span><span>Figma</span></div>
+                <div className={`${styles.cell} ${styles.cellTools}`}><span>Cursor</span><span>CoPilot</span><span>WindSurf</span><span>CodeWhisperer</span></div>
+                <div className={`${styles.cell} ${styles.cellTools}`}><span>BrowserStack</span><span>Testim</span><span>Playwright</span><span>Cypress</span></div>
+                <div className={`${styles.cell} ${styles.cellTools}`}><span>AWS</span><span>Azure</span><span>GCP</span><span>Terraform</span></div>
               </div>
             </div>
 
