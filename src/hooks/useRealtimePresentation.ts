@@ -391,9 +391,34 @@ const DEFAULT_SLIDES: SlideContent[] = [
       { icon: 'target', title: 'Accurate Estimates', description: 'Real scope visibility before committing resources' },
     ],
   },
-  // CLOSING
+  // 3PO SCREENSHOTS
   {
     id: 33,
+    sectionTitle: '3PO — Requirements Generation',
+    graphic: '/3po-requirements.jpg',
+    subtitle: 'AI extracts and structures requirements from legacy code into clear features and user stories',
+  },
+  {
+    id: 34,
+    sectionTitle: '3PO — Code Analysis Report',
+    graphic: '/3po-code-report.jpg',
+    subtitle: 'Comprehensive analysis with executive summary, risk assessment, and modernization roadmap',
+  },
+  {
+    id: 35,
+    sectionTitle: '3PO — Quality Issues',
+    graphic: '/3po-quality-issues.jpg',
+    subtitle: 'AI identifies code quality issues with evidence, impact analysis, and suggested fixes',
+  },
+  {
+    id: 36,
+    sectionTitle: '3PO — Auto-Generated Diagrams',
+    graphic: '/3po-diagram-erd.jpg',
+    subtitle: 'Entity relationship diagrams automatically generated from legacy database schemas',
+  },
+  // CLOSING
+  {
+    id: 37,
     sectionTitle: 'Key Takeaways',
     content: 'The future of software development is AI-augmented',
     bullets: [
@@ -405,13 +430,13 @@ const DEFAULT_SLIDES: SlideContent[] = [
     ],
   },
   {
-    id: 34,
+    id: 38,
     title: 'Thank You',
     titleBold: 'Questions?',
     subtitle: 'Let\'s build the future together',
   },
   {
-    id: 35,
+    id: 39,
     sectionTitle: 'Let\'s Connect',
     qrCode: '/linkedin-qr.svg',
     content: 'Billy Boozer',
