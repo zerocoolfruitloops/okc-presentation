@@ -26,9 +26,9 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   {
     id: 3,
-    title: 'AI Agents:',
-    titleBold: 'What\'s happening in Energy & Banking',
-    subtitle: 'The rise of autonomous AI in critical industries',
+    title: 'AI Agents 2026:',
+    titleBold: 'The Age of the Agent',
+    subtitle: 'What\'s happening in Energy & Banking',
   },
   // OPEN SOURCE AI - Page 1
   {

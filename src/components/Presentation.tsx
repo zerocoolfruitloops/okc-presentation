@@ -49,7 +49,7 @@ export function SlideList({ items }: { items: string[] }) {
 
 export function Footer({ 
   company = 'Dualboot Partners', 
-  title = 'AI Agents', 
+  title = 'AI Agents 2026: The Age of the Agent', 
   pageNumber 
 }: { 
   company?: string; 
