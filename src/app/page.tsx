@@ -391,7 +391,7 @@ function renderSlide(slide: SlideData, index: number, total: number) {
     );
   }
 
-  // Two-column slide: bullets + image
+  // Two-column slide: image + bullets
   if (slide.sectionTitle && slide.bullets && slide.bullets.length > 0 && slide.image && !slide.content && !slide.role) {
     return (
       <Slide key={slide.id}>
@@ -399,11 +399,11 @@ function renderSlide(slide: SlideData, index: number, total: number) {
         <Logo />
         <SlideContent>
           <div className="two-column-layout">
-            <div className="two-column-content">
-              <SlideList items={slide.bullets} />
-            </div>
             <div className="two-column-image">
               <img src={slide.image} alt="" />
+            </div>
+            <div className="two-column-content">
+              <SlideList items={slide.bullets} />
             </div>
           </div>
         </SlideContent>

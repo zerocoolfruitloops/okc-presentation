@@ -1193,14 +1193,14 @@ html, body {
 }
 
 /* ========================================
-   TWO-COLUMN LAYOUT (bullets + image)
+   TWO-COLUMN LAYOUT (image + bullets)
    ======================================== */
 .two-column-layout {
   display: flex;
   gap: 4rem;
   align-items: center;
   width: 100%;
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -1213,8 +1213,8 @@ html, body {
 }
 
 .two-column-image {
-  flex: 0 0 45%;
-  max-width: 500px;
+  flex: 0 0 50%;
+  max-width: 600px;
 }
 
 .two-column-image img {
@@ -1228,12 +1228,12 @@ html, body {
 
 @media (max-width: 900px) {
   .two-column-layout {
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 2rem;
   }
   
   .two-column-image {
-    max-width: 300px;
+    max-width: 350px;
   }
 }
 
