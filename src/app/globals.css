@@ -418,9 +418,16 @@ html, body {
   text-align: center;
 }
 
+.person-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
 .person-image {
-  width: 240px;
-  height: 240px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--border-light);
@@ -428,6 +435,21 @@ html, body {
     0 25px 50px -12px rgba(0, 0, 0, 0.5),
     0 0 40px var(--accent-blue-glow);
   flex-shrink: 0;
+}
+
+.person-qr-wrapper {
+  padding: 12px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 
+    0 15px 30px -8px rgba(0, 0, 0, 0.4),
+    0 0 30px var(--accent-blue-glow);
+}
+
+.person-qr {
+  width: 120px;
+  height: 120px;
+  display: block;
 }
 
 .person-info {

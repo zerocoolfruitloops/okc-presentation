@@ -93,19 +93,39 @@ function renderSlide(slide: SlideData, index: number, total: number) {
 
   // Person to follow slide
   if (slide.sectionTitle && slide.personName) {
+    // Determine QR code based on person name
+    const qrCodeMap: Record<string, string> = {
+      'Ryan Carson': '/ryan-carson-qr.svg',
+      'Boris Cherny': '/boris-cherny-qr.svg',
+      'Darryl Willis': '/darryl-willis-qr.svg',
+      'Teresa Heitsenrether': '/teresa-heitsenrether-qr.svg',
+    };
+    const personQr = qrCodeMap[slide.personName];
+    
     return (
       <Slide key={slide.id}>
         <SectionTitle>{slide.sectionTitle}</SectionTitle>
         <Logo />
         <SlideContent>
           <div className="person-card">
-            {slide.image && (
-              <img 
-                src={slide.image} 
-                alt={slide.personName}
-                className="person-image"
-              />
-            )}
+            <div className="person-visual">
+              {slide.image && (
+                <img 
+                  src={slide.image} 
+                  alt={slide.personName}
+                  className="person-image"
+                />
+              )}
+              {personQr && (
+                <div className="person-qr-wrapper">
+                  <img 
+                    src={personQr} 
+                    alt={`${slide.personName} profile QR`}
+                    className="person-qr"
+                  />
+                </div>
+              )}
+            </div>
             <div className="person-info">
               <h3 className="person-name">{slide.personName}</h3>
               <p className="person-title">{slide.personTitle}</p>
