@@ -273,12 +273,12 @@ const DEFAULT_SLIDES: SlideContent[] = [
   {
     id: 19,
     sectionTitle: 'What If We Could...',
-    bullets: [
-      'Cut development time in half — without cutting corners',
-      'Let AI handle the tedious work — humans focus on architecture',
-      'Catch bugs before they ship — not after',
-      'Scale teams without scaling headcount',
-      'Actually hit deadlines — consistently',
+    features: [
+      { icon: 'zap', title: '50% Faster Development', description: 'Cut development time in half — without cutting corners' },
+      { icon: 'brain', title: 'AI-Powered Automation', description: 'Let AI handle the tedious work — humans focus on architecture' },
+      { icon: 'shield', title: 'Proactive Quality', description: 'Catch bugs before they ship — not after' },
+      { icon: 'rocket', title: 'Scale Without Headcount', description: 'Grow output without growing the team' },
+      { icon: 'target', title: 'Hit Deadlines', description: 'Actually deliver on time — consistently' },
     ],
   },
   // DB90 SECTION
