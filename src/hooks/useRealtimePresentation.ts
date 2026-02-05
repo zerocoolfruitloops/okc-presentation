@@ -233,12 +233,12 @@ const DEFAULT_SLIDES: SlideContent[] = [
   {
     id: 16,
     sectionTitle: 'The Development Problem',
-    bullets: [
-      'Average enterprise project: 6-12 months, 2-3x over budget',
-      '70% of software projects fail to meet expectations',
-      'Developer burnout at all-time highs',
-      'Repetitive tasks consume 40% of engineering time',
-      'Quality suffers under deadline pressure',
+    callouts: [
+      { stat: '6-12 mo', label: 'Average enterprise project timeline', sublabel: '2-3x over budget' },
+      { stat: '70%', label: 'Software projects fail to meet expectations' },
+      { stat: '40%', label: 'Engineering time spent on repetitive tasks' },
+      { stat: '#1', label: 'Developer burnout at all-time highs' },
+      { stat: '↓', label: 'Quality suffers under deadline pressure' },
     ],
   },
   {

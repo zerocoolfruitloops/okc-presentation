@@ -48,6 +48,12 @@ type SlideData = {
   graphic?: string;
   // Projects (two-column layout)
   projects?: ProjectInfo[];
+  // Callouts (stat cards)
+  callouts?: {
+    stat: string;
+    label: string;
+    sublabel?: string;
+  }[];
 };
 
 function renderSlide(slide: SlideData, index: number, total: number) {
@@ -281,6 +287,28 @@ function renderSlide(slide: SlideData, index: number, total: number) {
           <div className="bio-content" style={{ textAlign: 'center', maxWidth: '700px' }}>
             <h3 className="bio-name">{slide.content}</h3>
             <p className="bio-role">{slide.role}</p>
+          </div>
+        </SlideContent>
+        <Footer pageNumber={index + 1} />
+      </Slide>
+    );
+  }
+
+  // Callouts slide (stat cards)
+  if (slide.sectionTitle && slide.callouts && slide.callouts.length > 0) {
+    return (
+      <Slide key={slide.id}>
+        <SectionTitle>{slide.sectionTitle}</SectionTitle>
+        <Logo />
+        <SlideContent>
+          <div className="callouts-grid">
+            {slide.callouts.map((callout, i) => (
+              <div key={i} className="callout-card">
+                <span className="callout-stat">{callout.stat}</span>
+                <span className="callout-label">{callout.label}</span>
+                {callout.sublabel && <span className="callout-sublabel">{callout.sublabel}</span>}
+              </div>
+            ))}
           </div>
         </SlideContent>
         <Footer pageNumber={index + 1} />

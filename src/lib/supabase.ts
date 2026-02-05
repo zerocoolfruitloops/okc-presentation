@@ -39,6 +39,12 @@ export type SlideContent = {
   graphic?: string;
   // Project cards
   projects?: ProjectInfo[];
+  // Callout cards
+  callouts?: {
+    stat: string;
+    label: string;
+    sublabel?: string;
+  }[];
 };
 
 export type PresentationData = {

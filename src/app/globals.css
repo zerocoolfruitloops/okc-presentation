@@ -1000,6 +1000,88 @@ html, body {
 }
 
 /* ========================================
+   CALLOUT CARDS (Stat highlights)
+   ======================================== */
+.callouts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.callout-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.callout-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-blue-bright));
+  opacity: 0.8;
+}
+
+.callout-stat {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--accent-blue-bright);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.callout-label {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+  max-width: 280px;
+}
+
+.callout-sublabel {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .callouts-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .callout-card {
+    padding: 1.25rem 1rem;
+  }
+  
+  .callout-stat {
+    font-size: 2rem;
+  }
+}
+
+/* ========================================
    PROJECT CARDS (Two-column layout)
    ======================================== */
 .projects-grid {
