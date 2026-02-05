@@ -12,7 +12,7 @@
 /* The diagram - centered container, content-sized */
 .diagram {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   font-family: 'Inter', -apple-system, sans-serif;
   display: flex;
   flex-direction: column;
@@ -129,14 +129,14 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 /* Matrix row */
 .row {
   display: grid;
-  grid-template-columns: 56px repeat(5, 1fr);
-  gap: 12px;
+  grid-template-columns: 64px repeat(5, 1fr);
+  gap: 16px;
 }
 
 .rowIcon {
@@ -146,18 +146,18 @@
 }
 
 .rowIcon svg {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   fill: #fff;
 }
 
 /* Phase headers */
 .phase {
   background: #2563eb;
-  border-radius: 10px;
-  padding: 10px 12px;
+  border-radius: 12px;
+  padding: 14px 16px;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #fff;
   display: flex;
@@ -169,8 +169,8 @@
 .cell {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 14px;
-  padding: 16px 12px;
+  border-radius: 16px;
+  padding: 20px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -179,7 +179,7 @@
 }
 
 .cell span {
-  font-size: 1.1rem;
+  font-size: 1.35rem;
   font-weight: 500;
   color: #e5e7eb;
   line-height: 1.4;
@@ -190,12 +190,12 @@
   background: rgba(255, 255, 255, 0.02);
   border: 2px solid #2563eb;
   border-bottom: none;
-  border-radius: 14px 14px 0 0;
-  padding: 16px 12px;
+  border-radius: 16px 16px 0 0;
+  padding: 20px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: -14px;
+  margin-bottom: -16px;
   z-index: 1;
 }
 
@@ -211,20 +211,20 @@
   align-items: center;
   justify-content: space-between;
   border: 2px solid #2563eb;
-  border-radius: 0 14px 14px 14px;
-  padding: 12px 20px;
+  border-radius: 0 16px 16px 16px;
+  padding: 16px 24px;
 }
 
 /* Tools cell - smaller text */
 .cellTools span {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 400;
   color: #fff;
 }
 
 /* Artifact cell */
 .cellArtifact span {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 400;
   color: #fff;
 }
@@ -233,9 +233,9 @@
 .badge {
   background: #2563eb;
   color: #fff;
-  padding: 10px 24px;
-  border-radius: 24px;
-  font-size: 1.1rem;
+  padding: 12px 28px;
+  border-radius: 28px;
+  font-size: 1.3rem;
   font-weight: 600;
 }
 
