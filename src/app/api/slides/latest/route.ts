@@ -7,9 +7,7 @@ export const revalidate = 0;
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
-// In-memory store for latest slides (simple solution)
-// In production, you'd use a database or Redis
-let latestSlides = [
+const DEFAULT_SLIDES = [
   {
     id: 1,
     title: 'AI Agents:',
@@ -39,28 +37,37 @@ let latestSlides = [
   },
 ];
 
-let lastUpdated = new Date().toISOString();
-
 export async function GET() {
-  return NextResponse.json({
-    slides: latestSlides,
-    updatedAt: lastUpdated,
-  }, {
-    headers: {
-      'Cache-Control': 'no-store, no-cache, must-revalidate',
-    },
-  });
-}
-
-export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    if (body.slides) {
-      latestSlides = body.slides;
-      lastUpdated = new Date().toISOString();
+    const supabase = createClient(supabaseUrl, supabaseKey);
+    const { data, error } = await supabase
+      .from('presentation_state')
+      .select('slides, updated_at')
+      .eq('id', 1)
+      .single();
+
+    if (error || !data?.slides || data.slides.length === 0) {
+      return NextResponse.json({
+        slides: DEFAULT_SLIDES,
+        updatedAt: new Date().toISOString(),
+      }, {
+        headers: { 'Cache-Control': 'no-store' },
+      });
     }
-    return NextResponse.json({ success: true });
-  } catch {
-    return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
+
+    return NextResponse.json({
+      slides: data.slides,
+      updatedAt: data.updated_at,
+    }, {
+      headers: { 'Cache-Control': 'no-store' },
+    });
+  } catch (error) {
+    console.error('Error fetching slides:', error);
+    return NextResponse.json({
+      slides: DEFAULT_SLIDES,
+      updatedAt: new Date().toISOString(),
+    }, {
+      headers: { 'Cache-Control': 'no-store' },
+    });
   }
 }

@@ -34,38 +34,38 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
 ];
 
-// Store latest slides in memory for polling fallback
-let latestSlides: SlideContent[] = DEFAULT_SLIDES;
-
 export function useRealtimePresentation() {
   const [slides, setSlides] = useState<SlideContent[]>(DEFAULT_SLIDES);
   const [status, setStatus] = useState<'connecting' | 'connected' | 'error'>('connecting');
   const channelRef = useRef<RealtimeChannel | null>(null);
-  const retryCount = useRef(0);
-  const maxRetries = 5;
+  const lastUpdateRef = useRef<string>('');
 
-  const updateSlides = useCallback((newSlides: SlideContent[]) => {
-    latestSlides = newSlides;
-    setSlides(newSlides);
+  // Fetch initial slides from database
+  useEffect(() => {
+    fetch('/api/slides/latest')
+      .then(r => r.json())
+      .then(data => {
+        if (data.slides && data.slides.length > 0) {
+          setSlides(data.slides);
+          lastUpdateRef.current = data.updatedAt || '';
+        }
+      })
+      .catch(console.error);
   }, []);
 
   useEffect(() => {
     let mounted = true;
-    let reconnectTimeout: NodeJS.Timeout;
 
     const setupRealtime = async () => {
       if (!mounted) return;
 
       try {
-        // Clean up existing channel
         if (channelRef.current) {
           await supabase.removeChannel(channelRef.current);
         }
 
         const channel = supabase.channel('presentation', {
-          config: {
-            broadcast: { self: true },
-          },
+          config: { broadcast: { self: true } },
         });
 
         channelRef.current = channel;
@@ -73,77 +73,55 @@ export function useRealtimePresentation() {
         channel
           .on('broadcast', { event: 'slide_update' }, (payload) => {
             if (!mounted) return;
-            console.log('📡 Received slide update:', payload);
+            console.log('📡 Received update');
             const data = payload.payload as PresentationData;
             if (data.slides) {
-              updateSlides(data.slides);
-              retryCount.current = 0; // Reset retry count on successful message
+              setSlides(data.slides);
+              lastUpdateRef.current = data.updatedAt;
             }
           })
           .subscribe((subscriptionStatus) => {
             if (!mounted) return;
-            console.log('📡 Realtime status:', subscriptionStatus);
-            
             if (subscriptionStatus === 'SUBSCRIBED') {
               setStatus('connected');
-              retryCount.current = 0;
             } else if (subscriptionStatus === 'CHANNEL_ERROR' || subscriptionStatus === 'TIMED_OUT') {
               setStatus('error');
-              
-              // Retry connection
-              if (retryCount.current < maxRetries) {
-                retryCount.current++;
-                console.log(`📡 Retrying connection (${retryCount.current}/${maxRetries})...`);
-                reconnectTimeout = setTimeout(setupRealtime, 2000 * retryCount.current);
-              }
-            } else if (subscriptionStatus === 'CLOSED') {
-              setStatus('error');
-              // Try to reconnect
-              if (retryCount.current < maxRetries) {
-                retryCount.current++;
-                reconnectTimeout = setTimeout(setupRealtime, 2000);
-              }
             }
           });
       } catch (error) {
-        console.error('📡 Realtime setup error:', error);
+        console.error('Realtime error:', error);
         setStatus('error');
-        
-        if (retryCount.current < maxRetries) {
-          retryCount.current++;
-          reconnectTimeout = setTimeout(setupRealtime, 2000 * retryCount.current);
-        }
       }
     };
 
     setupRealtime();
 
-    // Polling fallback - check for updates every 2 seconds if not connected
+    // Polling fallback - checks database every 2 seconds
     const pollInterval = setInterval(async () => {
-      if (status !== 'connected') {
-        try {
-          const response = await fetch('/api/slides/latest?t=' + Date.now());
-          if (response.ok) {
-            const data = await response.json();
-            if (data.slides && JSON.stringify(data.slides) !== JSON.stringify(slides)) {
-              updateSlides(data.slides);
-            }
+      try {
+        const response = await fetch('/api/slides/latest?t=' + Date.now());
+        if (response.ok) {
+          const data = await response.json();
+          // Only update if there's new data
+          if (data.updatedAt && data.updatedAt !== lastUpdateRef.current && data.slides?.length > 0) {
+            console.log('📡 Poll: new slides detected');
+            setSlides(data.slides);
+            lastUpdateRef.current = data.updatedAt;
           }
-        } catch (e) {
-          // Silent fail for polling
         }
+      } catch (e) {
+        // Silent fail
       }
     }, 2000);
 
     return () => {
       mounted = false;
-      clearTimeout(reconnectTimeout);
       clearInterval(pollInterval);
       if (channelRef.current) {
         supabase.removeChannel(channelRef.current);
       }
     };
-  }, [status, slides, updateSlides]);
+  }, []);
 
-  return { slides, status, updateSlides };
+  return { slides, status };
 }
