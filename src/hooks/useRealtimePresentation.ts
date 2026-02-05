@@ -236,11 +236,11 @@ const DEFAULT_SLIDES: SlideContent[] = [
     sectionTitle: 'Legacy Technologies Still Running',
     legacyCards: [
       { name: 'COBOL', icon: 'terminal', description: '220 billion lines still in production', meta: 'Since 1959 • Avg dev age: 55+' },
-      { name: 'AS/400', icon: 'server', description: 'IBM i RPG applications', meta: 'Since 1988 • Banks & insurance' },
-      { name: 'FoxPro', icon: 'database', description: 'Microsoft ended support', meta: 'EOL: January 2015' },
-      { name: 'VB6', icon: 'code', description: 'Visual Basic 6 extended support ended', meta: 'EOL: April 2008' },
+      { name: 'AS/400', logo: '/ibm-logo.png', description: 'IBM i RPG applications', meta: 'Since 1988 • Banks & insurance' },
+      { name: 'FoxPro', logo: '/microsoft-logo.png', description: 'Microsoft ended support', meta: 'EOL: January 2015' },
+      { name: 'VB6', logo: '/microsoft-logo.png', description: 'Visual Basic 6 extended support ended', meta: 'EOL: April 2008' },
       { name: 'FilePro', icon: 'file', description: 'DOS-era database applications', meta: 'Obsolete since 1990s' },
-      { name: 'PowerBuilder', icon: 'layers', description: 'Enterprise client-server apps', meta: 'Declining talent pool' },
+      { name: 'PowerBuilder', logo: '/powerbuilder-logo.png', description: 'Enterprise client-server apps', meta: 'Declining talent pool' },
     ],
   },
   {

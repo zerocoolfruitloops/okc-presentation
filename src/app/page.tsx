@@ -336,7 +336,13 @@ function renderSlide(slide: SlideData, index: number, total: number) {
           <div className="legacy-grid">
             {slide.legacyCards.map((card, i) => (
               <div key={i} className="legacy-card">
-                <div className="legacy-icon">{legacyIcons[card.icon]}</div>
+                {card.logo ? (
+                  <div className="legacy-logo">
+                    <img src={card.logo} alt={card.name} />
+                  </div>
+                ) : card.icon && legacyIcons[card.icon] ? (
+                  <div className="legacy-icon">{legacyIcons[card.icon]}</div>
+                ) : null}
                 <h3 className="legacy-name">{card.name}</h3>
                 <p className="legacy-desc">{card.description}</p>
                 <span className="legacy-meta">{card.meta}</span>
