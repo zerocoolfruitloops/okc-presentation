@@ -410,16 +410,18 @@ html, body {
    ======================================== */
 .person-card {
   display: flex;
-  align-items: flex-start;
-  gap: 3rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
   max-width: 900px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .person-image {
-  width: 280px;
-  height: 280px;
-  border-radius: 12px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--border-light);
   box-shadow: 
@@ -430,7 +432,7 @@ html, body {
 
 .person-info {
   flex: 1;
-  text-align: left;
+  text-align: center;
 }
 
 .person-name {
@@ -470,6 +472,7 @@ html, body {
 
 .person-links {
   display: flex;
+  justify-content: center;
   gap: 1.5rem;
 }
 
