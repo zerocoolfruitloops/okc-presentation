@@ -9,10 +9,10 @@
   box-sizing: border-box;
 }
 
-/* The diagram - centered 4xl container */
+/* The diagram - centered 7xl container */
 .diagram {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   height: 100%;
   font-family: 'Inter', -apple-system, sans-serif;
   display: flex;
