@@ -59,7 +59,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     personBio: 'Former BP executive with 25+ years in oil & gas. Now leading Google Cloud\'s energy vertical, helping the industry adopt AI for exploration, production, and sustainability.',
     personLinkedIn: 'https://linkedin.com/in/darrylwillis',
     personTwitter: 'https://x.com/darraborojevic',
-    image: '/darryl-willis.jpg',
+    image: '/darryl-willis.svg',
   },
   {
     id: 7,
@@ -69,7 +69,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     personCompany: 'JPMorgan Chase',
     personBio: 'Leading AI and data strategy at the world\'s largest bank. Overseeing 2,000+ AI/ML use cases in production. Transforming how banking uses machine learning at scale.',
     personLinkedIn: 'https://linkedin.com/in/teresa-heitsenrether',
-    image: '/teresa-heitsenrether.jpg',
+    image: '/teresa-heitsenrether.svg',
   },
 ];
 
