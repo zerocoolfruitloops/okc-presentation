@@ -25,6 +25,51 @@
   --border-light: rgba(255, 255, 255, 0.1);
 }
 
+/* Light Theme */
+[data-theme="light"] {
+  --background: #f5f7fa;
+  --background-secondary: #ffffff;
+  
+  --text-primary: #1a1d29;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+  
+  --accent-blue: #2563eb;
+  --accent-blue-bright: #3b82f6;
+  --accent-blue-glow: rgba(37, 99, 235, 0.1);
+  --accent-blue-glow-strong: rgba(37, 99, 235, 0.2);
+  
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-light: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .slide {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+}
+
+[data-theme="light"] .glow-left,
+[data-theme="light"] .glow-right {
+  opacity: 0.3;
+}
+
+[data-theme="light"] .project-card,
+[data-theme="light"] .bio-grid-item,
+[data-theme="light"] .legacy-card,
+[data-theme="light"] .feature-card,
+[data-theme="light"] .callout-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .legacy-logo img {
+  filter: none;
+}
+
+[data-theme="light"] .two-column-image img {
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.2);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -1464,3 +1509,31 @@ html, body {
   font-weight: 600;
 }
 /* Thu Feb  5 02:09:14 EST 2026 */
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  background: var(--background-secondary);
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
+
+.theme-toggle:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  border-color: var(--accent-blue);
+}
+

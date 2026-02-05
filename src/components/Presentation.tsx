@@ -76,15 +76,26 @@ export function Logo() {
 interface PresentationProps {
   children: ReactNode[];
   status?: 'connecting' | 'connected' | 'error';
+  currentSlide?: number; // Remote-controlled slide (1-indexed)
 }
 
-export function Presentation({ children, status = 'connected' }: PresentationProps) {
-  const [currentSlide, setCurrentSlide] = useState(0);
+export function Presentation({ children, status = 'connected', currentSlide: remoteSlide }: PresentationProps) {
+  const [localSlide, setLocalSlide] = useState(0);
   const totalSlides = children.length;
+  
+  // Use remote slide if provided (convert from 1-indexed to 0-indexed)
+  const currentSlide = remoteSlide ? remoteSlide - 1 : localSlide;
+  
+  // Sync local state when remote changes
+  useEffect(() => {
+    if (remoteSlide) {
+      setLocalSlide(remoteSlide - 1);
+    }
+  }, [remoteSlide]);
 
   const goToSlide = useCallback((index: number) => {
     if (index >= 0 && index < totalSlides) {
-      setCurrentSlide(index);
+      setLocalSlide(index);
     }
   }, [totalSlides]);
 

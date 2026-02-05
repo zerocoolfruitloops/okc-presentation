@@ -13,6 +13,7 @@ import {
   Logo 
 } from '@/components/Presentation';
 import { useRealtimePresentation } from '@/hooks/useRealtimePresentation';
+import { useRemoteControl } from '@/hooks/useRemoteControl';
 import { DB90Diagram } from '@/components/DB90Diagram';
 
 type ProjectInfo = {
@@ -542,10 +543,25 @@ function renderSlide(slide: SlideData, index: number, total: number) {
 
 export default function Home() {
   const { slides, status } = useRealtimePresentation();
+  const { currentSlide, theme, toggleTheme } = useRemoteControl();
+
+  // Apply theme to document
+  React.useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   return (
-    <Presentation status={status}>
+    <Presentation status={status} currentSlide={currentSlide}>
       {slides.map((slide, index) => renderSlide(slide as SlideData, index, slides.length))}
+      
+      {/* Theme Toggle Button */}
+      <button 
+        onClick={toggleTheme}
+        className="theme-toggle"
+        aria-label="Toggle theme"
+      >
+        {theme === 'dark' ? '☀️' : '🌙'}
+      </button>
     </Presentation>
   );
 }
