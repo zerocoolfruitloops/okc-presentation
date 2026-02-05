@@ -1,34 +1,46 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-const CHECK_INTERVAL = 5000; // Check every 5 seconds
+const CHECK_INTERVAL = 3000; // Check every 3 seconds
 
 export function AutoReload() {
   const initialVersion = useRef<string | null>(null);
+  const [status, setStatus] = useState<string>('connecting...');
 
   useEffect(() => {
+    const fetchVersion = async (): Promise<{ buildTime: string }> => {
+      const response = await fetch('/api/version?t=' + Date.now(), {
+        cache: 'no-store',
+      });
+      return response.json();
+    };
+
     // Get initial version
-    fetch('/version.json?t=' + Date.now())
-      .then(r => r.json())
+    fetchVersion()
       .then(data => {
         initialVersion.current = data.buildTime;
+        setStatus(`live`);
+        console.log('[AutoReload] Watching for changes. Build:', data.buildTime);
       })
-      .catch(() => {});
+      .catch((e) => {
+        setStatus('offline');
+        console.error('[AutoReload] Failed to connect:', e);
+      });
 
     const checkForUpdates = async () => {
       if (!initialVersion.current) return;
       
       try {
-        const response = await fetch('/version.json?t=' + Date.now());
-        const data = await response.json();
+        const data = await fetchVersion();
         
         if (data.buildTime && data.buildTime !== initialVersion.current) {
-          console.log('New deployment detected, reloading...');
-          window.location.reload();
+          console.log('[AutoReload] 🚀 New deployment detected!');
+          setStatus('🚀 updating...');
+          setTimeout(() => window.location.reload(), 300);
         }
       } catch (e) {
-        // Silently fail
+        // Silent fail
       }
     };
 
@@ -36,5 +48,18 @@ export function AutoReload() {
     return () => clearInterval(interval);
   }, []);
 
-  return null;
+  return (
+    <div style={{
+      position: 'fixed',
+      bottom: 8,
+      left: 8,
+      fontSize: 9,
+      color: status === 'live' ? '#4ade80' : '#fbbf24',
+      opacity: 0.6,
+      zIndex: 9999,
+      fontFamily: 'monospace',
+    }}>
+      ● {status}
+    </div>
+  );
 }

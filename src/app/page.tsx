@@ -21,7 +21,7 @@ export default function Home() {
         <SlideContent>
           <SlideTitle>AI Agents:</SlideTitle>
           <SlideTitle bold>What&apos;s happening in</SlideTitle>
-          <SlideTitle bold>Energy &amp; Banking 🚀</SlideTitle>
+          <SlideTitle bold>Energy &amp; Banking</SlideTitle>
           <SlideSubtitle>
             The rise of autonomous AI in critical industries
           </SlideSubtitle>
