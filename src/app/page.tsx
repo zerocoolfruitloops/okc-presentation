@@ -22,6 +22,7 @@ type SlideData = {
   bullets?: string[];
   content?: string;
   role?: string;
+  image?: string;
 };
 
 function renderSlide(slide: SlideData, index: number, total: number) {
@@ -39,7 +40,66 @@ function renderSlide(slide: SlideData, index: number, total: number) {
     );
   }
 
-  // About me slide with role
+  // About me slide with image and role
+  if (slide.sectionTitle && slide.content && slide.role && slide.image) {
+    return (
+      <Slide key={slide.id}>
+        <SectionTitle>{slide.sectionTitle}</SectionTitle>
+        <Logo />
+        <SlideContent>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '3rem', justifyContent: 'center' }}>
+            <img 
+              src={slide.image} 
+              alt={slide.content}
+              style={{ 
+                width: '180px', 
+                height: '180px', 
+                borderRadius: '50%', 
+                objectFit: 'cover',
+                border: '4px solid #2563eb',
+                boxShadow: '0 0 30px rgba(37, 99, 235, 0.3)'
+              }} 
+            />
+            <div style={{ textAlign: 'left' }}>
+              <h3 style={{ 
+                fontFamily: 'Playfair Display, serif', 
+                fontStyle: 'italic',
+                fontSize: '2.5rem',
+                marginBottom: '0.5rem',
+                color: 'white'
+              }}>
+                {slide.content}
+              </h3>
+              <p style={{ fontSize: '1.2rem', color: '#2563eb', marginBottom: '1.5rem', fontWeight: '500' }}>{slide.role}</p>
+              {slide.bullets && (
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {slide.bullets.map((bullet, i) => (
+                    <li key={i} style={{ 
+                      fontSize: '1.1rem', 
+                      color: '#a0a0b0', 
+                      marginBottom: '0.5rem',
+                      paddingLeft: '1.5rem',
+                      position: 'relative'
+                    }}>
+                      <span style={{ 
+                        position: 'absolute', 
+                        left: 0, 
+                        color: '#2563eb' 
+                      }}>→</span>
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        </SlideContent>
+        <Footer pageNumber={index + 1} />
+      </Slide>
+    );
+  }
+
+  // About me slide with role (no image)
   if (slide.sectionTitle && slide.content && slide.role) {
     return (
       <Slide key={slide.id}>

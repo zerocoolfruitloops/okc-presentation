@@ -13,6 +13,8 @@ export type SlideContent = {
   sectionTitle?: string;
   bullets?: string[];
   content?: string;
+  role?: string;
+  image?: string;
 };
 
 export type PresentationData = {

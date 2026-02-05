@@ -7,14 +7,21 @@ import { RealtimeChannel } from '@supabase/supabase-js';
 const DEFAULT_SLIDES: SlideContent[] = [
   {
     id: 1,
-    title: 'AI Agents:',
-    titleBold: 'What\'s happening in Energy & Banking',
-    subtitle: 'The rise of autonomous AI in critical industries',
+    sectionTitle: 'About me',
+    content: 'Billy Boozer',
+    role: 'Product Leader • Technology Executive • Faith-Driven Founder',
+    image: '/billy.png',
+    bullets: [
+      '15+ years leading product, engineering & technology teams',
+      'Built fintech and payment platforms at scale',
+      'Helped launch Truth Social (#1 free app in App Store)',
+    ],
   },
   {
     id: 2,
-    sectionTitle: 'About me',
-    content: 'Billy Boozer - CEO, Dualboot Partners',
+    title: 'AI Agents:',
+    titleBold: 'What\'s happening in Energy & Banking',
+    subtitle: 'The rise of autonomous AI in critical industries',
   },
   {
     id: 3,
