@@ -10,6 +10,7 @@ export type ProjectInfo = {
   logo: string;
   url: string;
   description: string;
+  features?: string[];
 };
 
 export type SlideContent = {

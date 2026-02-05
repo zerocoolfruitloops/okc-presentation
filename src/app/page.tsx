@@ -19,6 +19,7 @@ type ProjectInfo = {
   logo: string;
   url: string;
   description: string;
+  features?: string[];
 };
 
 type SlideData = {
@@ -66,6 +67,13 @@ function renderSlide(slide: SlideData, index: number, total: number) {
                   {project.url.replace('https://', '')}
                 </a>
                 <p className="project-description">{project.description}</p>
+                {project.features && project.features.length > 0 && (
+                  <ul className="project-features">
+                    {project.features.map((feature, j) => (
+                      <li key={j}>{feature}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
