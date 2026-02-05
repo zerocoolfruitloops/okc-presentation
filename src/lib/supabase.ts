@@ -25,6 +25,8 @@ export type SlideContent = {
   // QR code fields
   qrCode?: string;
   qrLabel?: string;
+  // Full graphic slide
+  graphic?: string;
 };
 
 export type PresentationData = {

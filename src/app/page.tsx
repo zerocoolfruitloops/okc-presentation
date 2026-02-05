@@ -33,9 +33,27 @@ type SlideData = {
   // QR code fields
   qrCode?: string;
   qrLabel?: string;
+  // Full graphic slide
+  graphic?: string;
 };
 
 function renderSlide(slide: SlideData, index: number, total: number) {
+  // Full graphic slide
+  if (slide.graphic) {
+    return (
+      <Slide key={slide.id}>
+        <div className="graphic-slide">
+          <img 
+            src={slide.graphic} 
+            alt={slide.sectionTitle || 'Slide graphic'}
+            className="slide-graphic"
+          />
+        </div>
+        <Footer pageNumber={index + 1} />
+      </Slide>
+    );
+  }
+
   // QR code / Connect slide
   if (slide.qrCode) {
     return (
