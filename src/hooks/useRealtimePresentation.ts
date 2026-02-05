@@ -5,6 +5,7 @@ import { supabase, PresentationData, SlideContent } from '@/lib/supabase';
 import { RealtimeChannel } from '@supabase/supabase-js';
 
 const DEFAULT_SLIDES: SlideContent[] = [
+  // INTRO
   {
     id: 1,
     sectionTitle: 'About me',
@@ -28,6 +29,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     titleBold: 'What\'s happening in Energy & Banking',
     subtitle: 'The rise of autonomous AI in critical industries',
   },
+  // AI LANDSCAPE
   {
     id: 4,
     sectionTitle: 'Open Source AI Tools',
@@ -50,6 +52,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
       'Amp / Claude Code — Agentic coding assistants',
     ],
   },
+  // PEOPLE TO FOLLOW
   {
     id: 6,
     sectionTitle: 'Who to Follow',
@@ -94,20 +97,27 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   {
     id: 10,
-    sectionTitle: 'Who to Follow — Banking',
-    personName: 'Teresa Heitsenrether',
-    personTitle: 'Chief Data & Analytics Officer',
-    personCompany: 'JPMorgan Chase',
-    personBio: 'Leading AI and data strategy at the world\'s largest bank. Overseeing 2,000+ AI/ML use cases in production.',
-    personLinkedIn: 'https://linkedin.com/in/teresa-heitsenrether',
-    image: '/teresa-heitsenrether.svg',
+    sectionTitle: 'Who to Follow — AI Leadership',
+    personName: 'Daniela Amodei',
+    personTitle: 'President & Co-Founder',
+    personCompany: 'Anthropic',
+    personBio: 'Co-founded Anthropic to build safe, beneficial AI. Former VP of Operations at OpenAI. Leading the company behind Claude.',
+    personTwitter: 'https://x.com/DanielaAmodei',
+    image: '/daniela-amodei.png',
   },
+  // DB90 SECTION
   {
     id: 11,
-    graphic: 'db90',
+    title: 'Introducing',
+    titleBold: 'DB90',
+    subtitle: 'AI-augmented software development that delivers 50% efficiency gains',
   },
   {
     id: 12,
+    graphic: 'db90',
+  },
+  {
+    id: 13,
     sectionTitle: 'DB90 — Key Benefits',
     bullets: [
       '50% reduction in development time',
@@ -117,9 +127,16 @@ const DEFAULT_SLIDES: SlideContent[] = [
       'Scalable across all SDLC phases',
     ],
   },
+  // 3PO SECTION
   {
-    id: 13,
-    sectionTitle: '3PO — AI-Powered Requirements',
+    id: 14,
+    title: 'Introducing',
+    titleBold: '3PO',
+    subtitle: 'AI-powered requirements that bridge the gap from idea to code',
+  },
+  {
+    id: 15,
+    sectionTitle: '3PO — How It Works',
     bullets: [
       'Natural language to structured requirements',
       'Automatic diagram and backlog generation',
@@ -129,19 +146,37 @@ const DEFAULT_SLIDES: SlideContent[] = [
     ],
   },
   {
-    id: 14,
+    id: 16,
+    sectionTitle: '3PO — The Impact',
+    bullets: [
+      'Requirements phase reduced from 15% to 5% of project time',
+      'Fewer misunderstandings between stakeholders and developers',
+      'Living documentation that evolves with the project',
+      'AI suggests edge cases humans often miss',
+      'Seamless integration with DB90 workflow',
+    ],
+  },
+  // CLOSING
+  {
+    id: 17,
     sectionTitle: 'Key Takeaways',
     content: 'The future of software development is AI-augmented',
     bullets: [
       'AI agents are transforming every phase of the SDLC',
       'Energy & Banking are leading enterprise AI adoption',
-      'Open source + closed source tools complement each other',
+      'DB90 + 3PO: 50% faster from idea to production',
       'Human expertise remains essential — AI augments, not replaces',
       'Start experimenting now — the learning curve is real',
     ],
   },
   {
-    id: 15,
+    id: 18,
+    title: 'Thank You',
+    titleBold: 'Questions?',
+    subtitle: 'Let\'s build the future together',
+  },
+  {
+    id: 19,
     sectionTitle: 'Let\'s Connect',
     qrCode: '/linkedin-qr.svg',
     content: 'Billy Boozer',

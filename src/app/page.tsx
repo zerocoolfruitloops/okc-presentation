@@ -99,7 +99,7 @@ function renderSlide(slide: SlideData, index: number, total: number) {
       'Boris Cherny': '/boris-cherny-qr.svg',
       'Andrej Karpathy': '/andrej-karpathy-qr.svg',
       'Darryl Willis': '/darryl-willis-qr.svg',
-      'Teresa Heitsenrether': '/teresa-heitsenrether-qr.svg',
+      'Daniela Amodei': '/daniela-amodei-qr.svg',
     };
     const personQr = qrCodeMap[slide.personName];
     
