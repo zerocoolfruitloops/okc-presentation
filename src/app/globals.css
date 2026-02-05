@@ -1423,8 +1423,10 @@ html, body {
 }
 
 .project-logo {
-  width: 80px;
-  height: 80px;
+  max-width: 80px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
   object-fit: contain;
   margin-bottom: 1.5rem;
   border-radius: 12px;
