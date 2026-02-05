@@ -16,14 +16,14 @@ export default function Home() {
       {/* Slide 1: Title Slide */}
       <Slide>
         <SlideContent>
-          <SlideTitle>Generative AI:</SlideTitle>
-          <SlideTitle bold>What&apos;s possible</SlideTitle>
-          <SlideTitle bold>and what&apos;s next</SlideTitle>
+          <SlideTitle>AI Agents:</SlideTitle>
+          <SlideTitle bold>What&apos;s happening in</SlideTitle>
+          <SlideTitle bold>Energy & Banking</SlideTitle>
           <SlideSubtitle>
-            The technical evolution and business impact of generative AI
+            The rise of autonomous AI in critical industries
           </SlideSubtitle>
         </SlideContent>
-        <Footer company="Dualboot Partners" title="Generative AI" pageNumber={1} />
+        <Footer company="Dualboot Partners" title="AI Agents" pageNumber={1} />
       </Slide>
 
       {/* Slide 2: About Me */}
@@ -51,7 +51,7 @@ export default function Home() {
             </div>
           </div>
         </SlideContent>
-        <Footer company="Dualboot Partners" title="Generative AI" pageNumber={2} />
+        <Footer company="Dualboot Partners" title="AI Agents" pageNumber={2} />
       </Slide>
 
       {/* Slide 3: Agenda/Overview */}
@@ -67,7 +67,7 @@ export default function Home() {
             'What\'s next: trends and predictions',
           ]} />
         </SlideContent>
-        <Footer company="Dualboot Partners" title="Generative AI" pageNumber={3} />
+        <Footer company="Dualboot Partners" title="AI Agents" pageNumber={3} />
       </Slide>
 
       {/* Slide 4: Placeholder for more content */}
@@ -79,7 +79,7 @@ export default function Home() {
             Send me your presentation content and I&apos;ll populate the slides.
           </p>
         </SlideContent>
-        <Footer company="Dualboot Partners" title="Generative AI" pageNumber={4} />
+        <Footer company="Dualboot Partners" title="AI Agents" pageNumber={4} />
       </Slide>
     </Presentation>
   );
