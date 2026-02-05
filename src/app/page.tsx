@@ -317,6 +317,38 @@ function renderSlide(slide: SlideData, index: number, total: number) {
     );
   }
 
+  // Legacy tech cards (stacked vertical layout)
+  if (slide.sectionTitle && slide.legacyCards && slide.legacyCards.length > 0) {
+    const legacyIcons: Record<string, React.ReactNode> = {
+      terminal: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="4,17 10,11 4,5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>,
+      server: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>,
+      database: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21,12 C21,13.7 17,15 12,15 C7,15 3,13.7 3,12"/><path d="M3,5 L3,19 C3,20.7 7,22 12,22 C17,22 21,20.7 21,19 L21,5"/></svg>,
+      code: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>,
+      file: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14,2 L6,2 C4.9,2 4,2.9 4,4 L4,20 C4,21.1 4.9,22 6,22 L18,22 C19.1,22 20,21.1 20,20 L20,8 L14,2 Z"/><polyline points="14,2 14,8 20,8"/></svg>,
+      layers: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="12,2 2,7 12,12 22,7 12,2"/><polyline points="2,17 12,22 22,17"/><polyline points="2,12 12,17 22,12"/></svg>,
+    };
+    
+    return (
+      <Slide key={slide.id}>
+        <SectionTitle>{slide.sectionTitle}</SectionTitle>
+        <Logo />
+        <SlideContent>
+          <div className="legacy-grid">
+            {slide.legacyCards.map((card, i) => (
+              <div key={i} className="legacy-card">
+                <div className="legacy-icon">{legacyIcons[card.icon]}</div>
+                <h3 className="legacy-name">{card.name}</h3>
+                <p className="legacy-desc">{card.description}</p>
+                <span className="legacy-meta">{card.meta}</span>
+              </div>
+            ))}
+          </div>
+        </SlideContent>
+        <Footer pageNumber={index + 1} />
+      </Slide>
+    );
+  }
+
   // Callouts slide (horizontal cards)
   if (slide.sectionTitle && slide.callouts && slide.callouts.length > 0) {
     const icons: Record<string, React.ReactNode> = {

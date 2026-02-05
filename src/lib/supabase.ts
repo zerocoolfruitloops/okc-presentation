@@ -57,6 +57,13 @@ export type SlideContent = {
     title: string;
     description: string;
   }[];
+  // Legacy tech cards (stacked layout)
+  legacyCards?: {
+    name: string;
+    icon: string;
+    description: string;
+    meta: string;
+  }[];
 };
 
 export type PresentationData = {

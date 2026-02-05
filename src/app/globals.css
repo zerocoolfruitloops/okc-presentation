@@ -1002,6 +1002,73 @@ html, body {
   font-style: italic;
 }
 
+/* ========================================
+   LEGACY TECH CARDS (stacked vertical)
+   ======================================== */
+.legacy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.legacy-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: all 0.2s ease;
+}
+
+.legacy-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.legacy-icon {
+  width: 64px;
+  height: 64px;
+  background: #2563eb;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.legacy-icon svg {
+  stroke: #fff;
+}
+
+.legacy-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+}
+
+.legacy-desc {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+}
+
+.legacy-meta {
+  font-size: 0.9rem;
+  color: var(--accent-blue-bright);
+  font-weight: 500;
+}
+
+/* ========================================
+   CALLOUTS GRID
+   ======================================== */
 .callouts-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
