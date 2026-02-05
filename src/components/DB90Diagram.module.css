@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 48px 100px 48px;
+  padding: 120px 48px 80px 48px;
   box-sizing: border-box;
 }
 
@@ -22,14 +22,14 @@
 /* Main layout - two columns */
 .main {
   display: flex;
-  gap: 40px;
+  gap: 32px;
   flex: 1;
   min-height: 0;
 }
 
 /* Left sidebar */
 .sidebar {
-  width: 340px;
+  width: 300px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -39,9 +39,9 @@
 /* Description box */
 .descBox {
   background: rgba(255, 255, 255, 0.03);
-  border-radius: 24px;
-  padding: 28px;
-  margin-bottom: 28px;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .descBox p {
@@ -55,19 +55,19 @@
 .legend {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   flex: 1;
 }
 
 .legendItem {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   align-items: flex-start;
 }
 
 .legendIcon {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   background: #2563eb;
   border-radius: 50%;
   display: flex;
@@ -77,20 +77,20 @@
 }
 
 .legendIcon svg {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   fill: #fff;
 }
 
 .legendLabel {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #fff;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .legendDesc {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: #fff;
   line-height: 1.4;
 }
@@ -132,16 +132,15 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: center;
+  gap: 10px;
 }
 
 /* Matrix row */
 .row {
   display: grid;
-  grid-template-columns: 56px repeat(5, 1fr);
-  gap: 12px;
-  flex: 1;
+  grid-template-columns: 48px repeat(5, 1fr);
+  gap: 10px;
 }
 
 .rowIcon {
@@ -151,18 +150,18 @@
 }
 
 .rowIcon svg {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   fill: #fff;
 }
 
 /* Phase headers */
 .phase {
   background: #2563eb;
-  border-radius: 12px;
-  padding: 16px 12px;
+  border-radius: 10px;
+  padding: 10px 12px;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #fff;
   display: flex;
@@ -174,8 +173,8 @@
 .cell {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 14px;
-  padding: 16px 12px;
+  border-radius: 12px;
+  padding: 12px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -195,18 +194,18 @@
   background: rgba(255, 255, 255, 0.02);
   border: 2px solid #2563eb;
   border-bottom: none;
-  border-radius: 14px 14px 0 0;
-  padding: 16px 12px;
+  border-radius: 12px 12px 0 0;
+  padding: 12px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: -14px;
+  margin-bottom: -12px;
   z-index: 1;
 }
 
 /* Connector row */
 .connectorRow {
-  flex: 0.5;
+  /* minimal height */
 }
 
 /* Connector span - L shape bottom part */
@@ -216,8 +215,8 @@
   align-items: center;
   justify-content: space-between;
   border: 2px solid #2563eb;
-  border-radius: 0 14px 14px 14px;
-  padding: 12px 20px;
+  border-radius: 0 12px 12px 12px;
+  padding: 8px 16px;
 }
 
 /* Tools cell - smaller text */
@@ -269,7 +268,7 @@
 
 /* Efficiency row */
 .effRow {
-  flex: 1.2;
+  /* normal height */
 }
 
 .effCell {
@@ -277,7 +276,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 4px;
 }
 
 .effBefore {
