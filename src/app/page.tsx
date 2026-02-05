@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { 
   Presentation, 
   Slide, 
@@ -307,7 +308,7 @@ function renderSlide(slide: SlideData, index: number, total: number) {
 
   // Callouts slide (horizontal cards)
   if (slide.sectionTitle && slide.callouts && slide.callouts.length > 0) {
-    const icons: Record<string, JSX.Element> = {
+    const icons: Record<string, React.ReactNode> = {
       code: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>,
       file: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14,2 L6,2 C4.9,2 4,2.9 4,4 L4,20 C4,21.1 4.9,22 6,22 L18,22 C19.1,22 20,21.1 20,20 L20,8 L14,2 Z"/><polyline points="14,2 14,8 20,8"/></svg>,
       users: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17,21 L17,19 C17,16.8 15.2,15 13,15 L5,15 C2.8,15 1,16.8 1,19 L1,21"/><circle cx="9" cy="7" r="4"/><path d="M23,21 L23,19 C23,17.1 21.8,15.5 20,15"/><path d="M16,3 C17.8,3.5 19,5.1 19,7 C19,8.9 17.8,10.5 16,11"/></svg>,
