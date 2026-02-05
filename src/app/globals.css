@@ -1013,3 +1013,23 @@ html, body {
     gap: 2rem;
   }
 }
+
+/* Connect slide email and website */
+.connect-email,
+.connect-website {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.connect-email a,
+.connect-website a {
+  color: var(--accent-blue-bright);
+  text-decoration: none;
+}
+
+.connect-email a:hover,
+.connect-website a:hover {
+  text-decoration: underline;
+}

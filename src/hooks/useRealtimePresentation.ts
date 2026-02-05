@@ -253,6 +253,8 @@ const DEFAULT_SLIDES: SlideContent[] = [
     qrCode: '/linkedin-qr.svg',
     content: 'Billy Boozer',
     qrLabel: 'linkedin.com/in/billyboozer',
+    email: 'billy.boozer@dualbootpartners.com',
+    website: 'dualbootpartners.com',
   },
 ];
 

@@ -32,6 +32,8 @@ export type SlideContent = {
   // QR code fields
   qrCode?: string;
   qrLabel?: string;
+  email?: string;
+  website?: string;
   // Full graphic slide
   graphic?: string;
   // Project cards

@@ -41,6 +41,8 @@ type SlideData = {
   // QR code fields
   qrCode?: string;
   qrLabel?: string;
+  email?: string;
+  website?: string;
   // Full graphic slide
   graphic?: string;
   // Projects (two-column layout)
@@ -116,6 +118,16 @@ function renderSlide(slide: SlideData, index: number, total: number) {
             />
             <div className="connect-info">
               {slide.content && <h3 className="connect-name">{slide.content}</h3>}
+              {slide.email && (
+                <p className="connect-email">
+                  <a href={`mailto:${slide.email}`}>{slide.email}</a>
+                </p>
+              )}
+              {slide.website && (
+                <p className="connect-website">
+                  <a href={`https://${slide.website}`} target="_blank" rel="noopener noreferrer">{slide.website}</a>
+                </p>
+              )}
               {slide.qrLabel && <p className="connect-label">{slide.qrLabel}</p>}
             </div>
           </div>
