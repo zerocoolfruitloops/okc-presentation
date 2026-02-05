@@ -77,35 +77,30 @@ export function DB90Diagram() {
               <div className={styles.cell}><span>DevOps</span><span>Engineer</span></div>
             </div>
 
-            {/* AI Tools + Connectors with L-shaped 3PO border */}
-            <div className={styles.toolsAndConnectors}>
+            {/* AI Tools */}
+            <div className={styles.row}>
               <div className={styles.rowIcon}><WrenchIcon/></div>
-              
-              {/* L-shaped 3PO container */}
-              <div className={styles.lShape}>
-                {/* Vertical part - 3PO badge */}
-                <div className={styles.lVertical}>
-                  <span className={styles.badge}>3PO</span>
-                </div>
-                {/* Horizontal part - all connectors */}
-                <div className={styles.lHorizontal}>
-                  <div className={styles.connector}>↕</div>
-                  <div className={styles.connector}>↕</div>
-                  <div className={styles.connectorCenter}>
-                    <div className={styles.connectorLine}/>
-                    <span className={styles.badge}>3PO</span>
-                    <div className={styles.connectorLine}/>
-                  </div>
-                  <div className={styles.connector}>↕</div>
-                  <div className={styles.connector}>↕</div>
-                </div>
-              </div>
-              
-              {/* Other AI Tools cells */}
+              <div className={styles.cell3poTop}><span className={styles.badge}>3PO</span></div>
               <div className={`${styles.cell} ${styles.cellTools}`}><span>UXPilot</span><span>Figma</span></div>
               <div className={`${styles.cell} ${styles.cellTools}`}><span>Cursor</span><span>CoPilot</span><span>WindSurf</span><span>CodeWhisperer</span></div>
               <div className={`${styles.cell} ${styles.cellTools}`}><span>BrowserStack</span><span>Testim</span><span>Playwright</span><span>Cypress</span></div>
               <div className={`${styles.cell} ${styles.cellTools}`}><span>AWS</span><span>Azure</span><span>GCP</span><span>Terraform</span></div>
+            </div>
+
+            {/* Connectors */}
+            <div className={`${styles.row} ${styles.connectorRow}`}>
+              <div className={styles.rowIcon}/>
+              <div className={styles.connectorSpan}>
+                <div className={styles.connector}>↕</div>
+                <div className={styles.connector}>↕</div>
+                <div className={styles.connectorCenter}>
+                  <div className={styles.connectorLine}/>
+                  <span className={styles.badge}>3PO</span>
+                  <div className={styles.connectorLine}/>
+                </div>
+                <div className={styles.connector}>↕</div>
+                <div className={styles.connector}>↕</div>
+              </div>
             </div>
 
             {/* Artifacts */}

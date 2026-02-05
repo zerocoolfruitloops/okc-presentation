@@ -190,66 +190,35 @@
   line-height: 1.4;
 }
 
-/* Tools + Connectors combined section */
-.toolsAndConnectors {
-  position: relative;
-  display: grid;
-  grid-template-columns: 56px repeat(5, 1fr);
-  grid-template-rows: 1fr auto;
-  gap: 12px;
-  flex: 1.5;
-}
-
-.toolsAndConnectors > .rowIcon {
-  grid-column: 1;
-  grid-row: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.toolsAndConnectors > .cell {
-  grid-row: 1;
-}
-
-/* L-shaped 3PO container */
-.lShape {
-  grid-column: 2 / 7;
-  grid-row: 1 / 3;
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr auto;
-  gap: 0;
-}
-
-.lVertical {
-  grid-column: 1;
-  grid-row: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
+/* 3PO top cell - L shape top part */
+.cell3poTop {
+  background: rgba(255, 255, 255, 0.02);
   border: 2px solid #2563eb;
   border-bottom: none;
   border-radius: 14px 14px 0 0;
+  padding: 16px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -14px;
+  z-index: 1;
 }
 
-.lHorizontal {
-  grid-column: 1 / 3;
-  grid-row: 2;
+/* Connector row */
+.connectorRow {
+  flex: 0.5;
+}
+
+/* Connector span - L shape bottom part */
+.connectorSpan {
+  grid-column: 2 / 7;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 20px;
   border: 2px solid #2563eb;
   border-radius: 0 14px 14px 14px;
+  padding: 12px 20px;
 }
-
-/* Position other tool cells over the L-shape */
-.toolsAndConnectors > .cell:nth-of-type(1) { grid-column: 3; }
-.toolsAndConnectors > .cell:nth-of-type(2) { grid-column: 4; }
-.toolsAndConnectors > .cell:nth-of-type(3) { grid-column: 5; }
-.toolsAndConnectors > .cell:nth-of-type(4) { grid-column: 6; }
 
 /* Tools cell - smaller text */
 .cellTools span {
