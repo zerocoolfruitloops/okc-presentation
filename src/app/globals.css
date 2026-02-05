@@ -1149,6 +1149,22 @@ html, body {
   background: rgba(255, 255, 255, 0.02);
 }
 
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-bright) 100%);
+  border-radius: 12px;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.features-grid-icons .feature-card {
+  text-align: left;
+}
+
 .feature-title {
   font-family: 'Inter', sans-serif;
   font-size: 1.35rem;

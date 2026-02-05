@@ -50,6 +50,7 @@ export type SlideContent = {
   features?: {
     title: string;
     description: string;
+    icon?: string;
   }[];
 };
 

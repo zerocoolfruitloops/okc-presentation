@@ -60,6 +60,7 @@ type SlideData = {
   features?: {
     title: string;
     description: string;
+    icon?: string;
   }[];
 };
 
@@ -356,14 +357,29 @@ function renderSlide(slide: SlideData, index: number, total: number) {
 
   // Feature grid slide
   if (slide.sectionTitle && slide.features && slide.features.length > 0) {
+    const featureIcons: Record<string, React.ReactNode> = {
+      clock: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>,
+      brain: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2a9 9 0 0 1 9 9c0 3.1-1.5 5.8-4 7.5V21H7v-2.5C4.5 16.8 3 14.1 3 11a9 9 0 0 1 9-9z"/><path d="M9 21v1a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-1"/></svg>,
+      shield: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2L3 7v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z"/><polyline points="9,12 11,14 15,10"/></svg>,
+      link: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.5-1.5"/></svg>,
+      zap: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/></svg>,
+      rocket: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>,
+      check: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>,
+      target: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>,
+    };
+    const hasIcons = slide.features.some(f => f.icon);
+    
     return (
       <Slide key={slide.id}>
         <SectionTitle>{slide.sectionTitle}</SectionTitle>
         <Logo />
         <SlideContent>
-          <div className="features-grid">
+          <div className={hasIcons ? "features-grid features-grid-icons" : "features-grid"}>
             {slide.features.map((feature, i) => (
               <div key={i} className="feature-card">
+                {feature.icon && featureIcons[feature.icon] && (
+                  <div className="feature-icon">{featureIcons[feature.icon]}</div>
+                )}
                 <h3 className="feature-title">{feature.title}</h3>
                 <p className="feature-description">{feature.description}</p>
               </div>

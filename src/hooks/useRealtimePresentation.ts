@@ -352,12 +352,13 @@ const DEFAULT_SLIDES: SlideContent[] = [
   {
     id: 30,
     sectionTitle: '3PO — The Impact',
-    bullets: [
-      'Requirements discovery: 6 months → 6 weeks',
-      'Captures tribal knowledge before it\'s gone',
-      'Reduces replatforming risk with AI-verified completeness',
-      'Seamless handoff to DB90 for accelerated development',
-      'Finally makes legacy modernization achievable',
+    features: [
+      { icon: 'zap', title: '10x Faster Discovery', description: 'Requirements in 6 weeks instead of 6 months' },
+      { icon: 'brain', title: 'Capture Tribal Knowledge', description: 'Preserve institutional memory before it retires' },
+      { icon: 'shield', title: 'Reduce Risk', description: 'AI-verified completeness catches gaps early' },
+      { icon: 'link', title: 'Seamless DB90 Handoff', description: 'Requirements flow directly into development' },
+      { icon: 'rocket', title: 'Modernization Unlocked', description: 'Finally make legacy transformation achievable' },
+      { icon: 'target', title: 'Accurate Estimates', description: 'Real scope visibility before committing resources' },
     ],
   },
   // CLOSING
