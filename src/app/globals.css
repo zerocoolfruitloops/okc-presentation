@@ -67,7 +67,7 @@
 }
 
 [data-theme="light"] .logo img {
-  filter: invert(1);
+  filter: invert(1) !important;
 }
 
 [data-theme="light"] .two-column-image img {
