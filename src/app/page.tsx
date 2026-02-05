@@ -14,6 +14,13 @@ import {
 import { useRealtimePresentation } from '@/hooks/useRealtimePresentation';
 import { DB90Diagram } from '@/components/DB90Diagram';
 
+type ProjectInfo = {
+  name: string;
+  logo: string;
+  url: string;
+  description: string;
+};
+
 type SlideData = {
   id: number;
   title?: string;
@@ -36,9 +43,36 @@ type SlideData = {
   qrLabel?: string;
   // Full graphic slide
   graphic?: string;
+  // Projects (two-column layout)
+  projects?: ProjectInfo[];
 };
 
 function renderSlide(slide: SlideData, index: number, total: number) {
+  // Projects slide (two-column layout)
+  if (slide.projects && slide.projects.length > 0) {
+    return (
+      <Slide key={slide.id}>
+        <SectionTitle>{slide.sectionTitle}</SectionTitle>
+        <Logo />
+        <SlideContent>
+          <div className="projects-grid">
+            {slide.projects.map((project, i) => (
+              <div key={i} className="project-card">
+                <img src={project.logo} alt={project.name} className="project-logo" />
+                <h3 className="project-name">{project.name}</h3>
+                <a href={project.url} target="_blank" rel="noopener noreferrer" className="project-url">
+                  {project.url.replace('https://', '')}
+                </a>
+                <p className="project-description">{project.description}</p>
+              </div>
+            ))}
+          </div>
+        </SlideContent>
+        <Footer pageNumber={index + 1} />
+      </Slide>
+    );
+  }
+
   // DB90 Diagram slide
   if (slide.graphic === '/db90-diagram.jpg' || slide.graphic === 'db90') {
     return (

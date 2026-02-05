@@ -29,32 +29,104 @@ const DEFAULT_SLIDES: SlideContent[] = [
     titleBold: 'What\'s happening in Energy & Banking',
     subtitle: 'The rise of autonomous AI in critical industries',
   },
-  // AI LANDSCAPE
+  // OPEN SOURCE AI - Page 1
   {
     id: 4,
     sectionTitle: 'Open Source AI Tools',
-    bullets: [
-      'LangChain — Framework for building LLM applications',
-      'AutoGPT — Autonomous AI agent experiments',
-      'CrewAI — Multi-agent orchestration framework',
-      'OpenDevin — Open-source AI software engineer',
-      'Haystack — End-to-end NLP pipelines',
+    projects: [
+      {
+        name: 'LangChain',
+        logo: '/langchain-logo.png',
+        url: 'https://langchain.com',
+        description: 'The leading framework for building LLM-powered applications. Provides modular components for prompts, chains, agents, and memory to create sophisticated AI workflows.',
+      },
+      {
+        name: 'AutoGPT',
+        logo: '/autogpt-logo.png',
+        url: 'https://autogpt.net',
+        description: 'An experimental open-source application showcasing autonomous AI agents. Chains together LLM "thoughts" to achieve user-defined goals with minimal human intervention.',
+      },
     ],
   },
+  // OPEN SOURCE AI - Page 2
   {
     id: 5,
+    sectionTitle: 'Open Source AI Tools',
+    projects: [
+      {
+        name: 'CrewAI',
+        logo: '/crewai-logo.png',
+        url: 'https://crewai.com',
+        description: 'Framework for orchestrating autonomous AI agents that work together. Define roles, goals, and tools for each agent to collaborate on complex tasks.',
+      },
+      {
+        name: 'OpenDevin',
+        logo: '/opendevin-logo.png',
+        url: 'https://github.com/OpenDevin/OpenDevin',
+        description: 'Open-source AI software engineer that can write code, debug, and execute tasks. Replicates Devin\'s capabilities with full transparency and customization.',
+      },
+    ],
+  },
+  // CLOSED SOURCE AI - Page 1
+  {
+    id: 6,
     sectionTitle: 'Closed Source AI',
-    bullets: [
-      'OpenAI GPT-4 / ChatGPT — Industry leader in reasoning',
-      'Anthropic Claude — Constitutional AI, long context',
-      'Google Gemini — Multimodal, deep Google integration',
-      'Cursor / GitHub Copilot — AI-powered coding',
-      'Amp / Claude Code — Agentic coding assistants',
+    projects: [
+      {
+        name: 'OpenAI GPT-4',
+        logo: '/openai-logo.png',
+        url: 'https://openai.com',
+        description: 'Industry-leading large language model powering ChatGPT. Excels at reasoning, coding, and creative tasks with the largest ecosystem of plugins and integrations.',
+      },
+      {
+        name: 'Anthropic Claude',
+        logo: '/anthropic-logo.png',
+        url: 'https://anthropic.com',
+        description: 'Constitutional AI designed to be helpful, harmless, and honest. Features 200K token context window and excels at analysis, writing, and coding tasks.',
+      },
+    ],
+  },
+  // CLOSED SOURCE AI - Page 2
+  {
+    id: 7,
+    sectionTitle: 'Closed Source AI',
+    projects: [
+      {
+        name: 'Google Gemini',
+        logo: '/gemini-logo.svg',
+        url: 'https://gemini.google.com',
+        description: 'Google\'s most capable multimodal AI. Natively understands text, images, audio, and video with deep integration across Google Workspace and Cloud.',
+      },
+      {
+        name: 'GitHub Copilot',
+        logo: '/copilot-logo.png',
+        url: 'https://github.com/features/copilot',
+        description: 'AI pair programmer that suggests code in real-time. Trained on billions of lines of code, it accelerates development across all major languages and IDEs.',
+      },
+    ],
+  },
+  // CLOSED SOURCE AI - Page 3
+  {
+    id: 8,
+    sectionTitle: 'Closed Source AI',
+    projects: [
+      {
+        name: 'Cursor',
+        logo: '/cursor-logo.png',
+        url: 'https://cursor.com',
+        description: 'AI-first code editor built on VS Code. Features AI-powered autocomplete, chat, and codebase understanding that learns your project\'s patterns.',
+      },
+      {
+        name: 'Amp',
+        logo: '/amp-logo.png',
+        url: 'https://sourcegraph.com/amp',
+        description: 'Frontier AI coding agent by Sourcegraph. Ships entire features autonomously while you sleep, handling everything from planning to pull requests.',
+      },
     ],
   },
   // PEOPLE TO FOLLOW
   {
-    id: 6,
+    id: 9,
     sectionTitle: 'Who to Follow',
     personName: 'Ryan Carson',
     personTitle: 'Builder in Residence',
@@ -65,7 +137,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     image: '/ryan-carson.jpg',
   },
   {
-    id: 7,
+    id: 10,
     sectionTitle: 'Who to Follow',
     personName: 'Boris Cherny',
     personTitle: 'Creator of Claude Code',
@@ -76,7 +148,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     image: '/boris-cherny.jpg',
   },
   {
-    id: 8,
+    id: 11,
     sectionTitle: 'Who to Follow',
     personName: 'Andrej Karpathy',
     personTitle: 'AI Researcher & Educator',
@@ -86,7 +158,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     image: '/andrej-karpathy.jpg',
   },
   {
-    id: 9,
+    id: 12,
     sectionTitle: 'Who to Follow — Energy',
     personName: 'Darryl Willis',
     personTitle: 'Corporate Vice President, Energy & Resources',
@@ -96,7 +168,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     image: '/darryl-willis.jpg',
   },
   {
-    id: 10,
+    id: 13,
     sectionTitle: 'Who to Follow — AI Leadership',
     personName: 'Daniela Amodei',
     personTitle: 'President & Co-Founder',
@@ -107,17 +179,17 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // DB90 SECTION
   {
-    id: 11,
+    id: 14,
     title: 'Introducing',
     titleBold: 'DB90',
     subtitle: 'AI-augmented software development that delivers 50% efficiency gains',
   },
   {
-    id: 12,
+    id: 15,
     graphic: 'db90',
   },
   {
-    id: 13,
+    id: 16,
     sectionTitle: 'DB90 — Key Benefits',
     bullets: [
       '50% reduction in development time',
@@ -129,13 +201,13 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // 3PO SECTION
   {
-    id: 14,
+    id: 17,
     title: 'Introducing',
     titleBold: '3PO',
     subtitle: 'AI-powered requirements that bridge the gap from idea to code',
   },
   {
-    id: 15,
+    id: 18,
     sectionTitle: '3PO — How It Works',
     bullets: [
       'Natural language to structured requirements',
@@ -146,7 +218,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
     ],
   },
   {
-    id: 16,
+    id: 19,
     sectionTitle: '3PO — The Impact',
     bullets: [
       'Requirements phase reduced from 15% to 5% of project time',
@@ -158,7 +230,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   },
   // CLOSING
   {
-    id: 17,
+    id: 20,
     sectionTitle: 'Key Takeaways',
     content: 'The future of software development is AI-augmented',
     bullets: [
@@ -170,13 +242,13 @@ const DEFAULT_SLIDES: SlideContent[] = [
     ],
   },
   {
-    id: 18,
+    id: 21,
     title: 'Thank You',
     titleBold: 'Questions?',
     subtitle: 'Let\'s build the future together',
   },
   {
-    id: 19,
+    id: 22,
     sectionTitle: 'Let\'s Connect',
     qrCode: '/linkedin-qr.svg',
     content: 'Billy Boozer',
