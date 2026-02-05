@@ -12,7 +12,6 @@ import {
   Logo 
 } from '@/components/Presentation';
 import { useRealtimePresentation } from '@/hooks/useRealtimePresentation';
-import { DB90Diagram } from '@/components/DB90Diagram';
 
 type SlideData = {
   id: number;
@@ -39,11 +38,17 @@ type SlideData = {
 };
 
 function renderSlide(slide: SlideData, index: number, total: number) {
-  // DB90 Diagram slide
+  // DB90 Diagram slide - use the original graphic, centered
   if (slide.graphic === '/db90-diagram.jpg' || slide.graphic === 'db90') {
     return (
       <Slide key={slide.id}>
-        <DB90Diagram />
+        <div className="graphic-slide">
+          <img 
+            src="/db90-diagram.jpg" 
+            alt="DB90: Build faster, build better"
+            className="slide-graphic-centered"
+          />
+        </div>
         <Footer pageNumber={index + 1} />
       </Slide>
     );
