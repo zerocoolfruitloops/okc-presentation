@@ -1197,10 +1197,10 @@ html, body {
    ======================================== */
 .two-column-layout {
   display: flex;
-  gap: 4rem;
+  gap: 5rem;
   align-items: center;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1700px;
   margin: 0 auto;
 }
 
@@ -1240,8 +1240,8 @@ html, body {
 }
 
 .two-column-image {
-  flex: 0 0 50%;
-  max-width: 600px;
+  flex: 0 0 45%;
+  max-width: 700px;
 }
 
 .two-column-image img {
