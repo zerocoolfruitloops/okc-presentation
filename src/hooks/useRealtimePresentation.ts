@@ -33,6 +33,8 @@ const DEFAULT_SLIDES: SlideContent[] = [
       { title: '7 Datacenters', description: 'US & Canada infrastructure on OpenStack & CloudStack' },
       { title: 'Head of NLP from SIRI', description: 'Hired to lead all ML and content moderation' },
       { title: '392M Uniques Day One', description: 'Traffic on the day we announced Truth Social' },
+      { title: '0 to 60+ Engineers', description: 'Scaled the team in just 3 months' },
+      { title: 'Largest Preorder Ever', description: 'From no software to #1 preordered app in App Store history in 5 months' },
     ],
   },
   {
