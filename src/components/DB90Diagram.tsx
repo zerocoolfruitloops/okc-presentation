@@ -5,6 +5,7 @@ import styles from './DB90Diagram.module.css';
 export function DB90Diagram() {
   return (
     <div className={styles.container}>
+      <div className={styles.inner}>
       {/* Header */}
       <header className={styles.header}>
         <h1 className={styles.title}>
@@ -168,6 +169,7 @@ export function DB90Diagram() {
           </div>
         </div>
       </main>
+      </div>
     </div>
   );
 }
