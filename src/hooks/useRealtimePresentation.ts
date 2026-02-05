@@ -286,7 +286,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   // DB90 SECTION
   {
     id: 20,
-    title: 'Introducing',
+    title: 'Meet',
     titleBold: 'DB90',
     subtitle: 'AI-augmented software development that delivers 50% efficiency gains',
   },
@@ -363,7 +363,7 @@ const DEFAULT_SLIDES: SlideContent[] = [
   // 3PO SECTION
   {
     id: 30,
-    title: 'Introducing',
+    title: 'Meet',
     titleBold: '3PO',
     subtitle: 'AI-powered requirements that bridge the gap from legacy to modern',
   },
