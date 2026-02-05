@@ -294,7 +294,7 @@ function renderSlide(slide: SlideData, index: number, total: number) {
     );
   }
 
-  // Callouts slide (stat cards)
+  // Callouts slide (horizontal cards)
   if (slide.sectionTitle && slide.callouts && slide.callouts.length > 0) {
     return (
       <Slide key={slide.id}>
@@ -305,8 +305,10 @@ function renderSlide(slide: SlideData, index: number, total: number) {
             {slide.callouts.map((callout, i) => (
               <div key={i} className="callout-card">
                 <span className="callout-stat">{callout.stat}</span>
-                <span className="callout-label">{callout.label}</span>
-                {callout.sublabel && <span className="callout-sublabel">{callout.sublabel}</span>}
+                <div className="callout-content">
+                  <span className="callout-label">{callout.label}</span>
+                  {callout.sublabel && <span className="callout-sublabel">{callout.sublabel}</span>}
+                </div>
               </div>
             ))}
           </div>

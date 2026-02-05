@@ -984,84 +984,77 @@ html, body {
 }
 
 /* ========================================
-   CALLOUT CARDS (Stat highlights)
+   CALLOUT CARDS (Horizontal card style)
    ======================================== */
 .callouts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .callout-card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1.5rem;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.03) 0%,
-    rgba(255, 255, 255, 0.01) 100%
-  );
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  text-align: center;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  border-radius: 12px;
+  transition: all 0.2s ease;
 }
 
-.callout-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-blue), var(--accent-blue-bright));
-  opacity: 0.8;
+.callout-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .callout-stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  height: 40px;
+  padding: 0.25rem 0.75rem;
+  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-bright) 100%);
+  border-radius: 8px;
   font-family: 'Inter', sans-serif;
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: 0.85rem;
   font-weight: 700;
-  color: var(--accent-blue-bright);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: 0.5rem;
+  color: white;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.callout-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .callout-label {
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-size: 1.1rem;
   font-weight: 500;
   color: var(--text-primary);
-  line-height: 1.4;
-  max-width: 280px;
+  line-height: 1.35;
 }
 
 .callout-sublabel {
   font-size: 0.9rem;
   color: var(--text-secondary);
-  margin-top: 0.5rem;
   font-weight: 400;
+  line-height: 1.4;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .callouts-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1rem;
-  }
-  
-  .callout-card {
-    padding: 1.25rem 1rem;
-  }
-  
-  .callout-stat {
-    font-size: 2rem;
   }
 }
 
