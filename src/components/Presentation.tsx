@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, ReactNode } from 'react';
+import { useState, useEffect, useCallback, ReactNode, useRef } from 'react';
 
 interface SlideProps {
   children: ReactNode;
@@ -73,6 +73,70 @@ export function Logo() {
   );
 }
 
+interface ThumbnailSidebarProps {
+  totalSlides: number;
+  currentSlide: number;
+  onSlideSelect: (index: number) => void;
+  isOpen: boolean;
+  onToggle: () => void;
+}
+
+function ThumbnailSidebar({ totalSlides, currentSlide, onSlideSelect, isOpen, onToggle }: ThumbnailSidebarProps) {
+  const activeRef = useRef<HTMLButtonElement>(null);
+  
+  // Scroll active thumbnail into view when slide changes
+  useEffect(() => {
+    if (isOpen && activeRef.current) {
+      activeRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+      });
+    }
+  }, [currentSlide, isOpen]);
+  
+  return (
+    <>
+      {/* Toggle button */}
+      <button 
+        className="thumbnail-toggle"
+        onClick={(e) => {
+          e.stopPropagation();
+          onToggle();
+        }}
+        aria-label={isOpen ? 'Hide thumbnails' : 'Show thumbnails'}
+      >
+        {isOpen ? '◀' : '▶'}
+      </button>
+      
+      {/* Sidebar */}
+      <div className={`thumbnail-sidebar ${isOpen ? 'open' : ''}`} onClick={(e) => e.stopPropagation()}>
+        <div className="thumbnail-list">
+          {Array.from({ length: totalSlides }, (_, i) => {
+            const slideNum = String(i + 1).padStart(2, '0');
+            const isActive = i === currentSlide;
+            return (
+              <button
+                key={i}
+                ref={isActive ? activeRef : null}
+                className={`thumbnail-item ${isActive ? 'active' : ''}`}
+                onClick={() => onSlideSelect(i)}
+                aria-label={`Go to slide ${i + 1}`}
+              >
+                <img 
+                  src={`/screenshots/slide-${slideNum}.png`} 
+                  alt={`Slide ${i + 1}`}
+                  loading="lazy"
+                />
+                <span className="thumbnail-number">{i + 1}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
+}
+
 interface PresentationProps {
   children: ReactNode[];
   status?: 'connecting' | 'connected' | 'error';
@@ -81,6 +145,7 @@ interface PresentationProps {
 
 export function Presentation({ children, status = 'connected', currentSlide: remoteSlide }: PresentationProps) {
   const [localSlide, setLocalSlide] = useState(0);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const totalSlides = children.length;
   
   // Use remote slide if provided (convert from 1-indexed to 0-indexed)
@@ -129,6 +194,15 @@ export function Presentation({ children, status = 'connected', currentSlide: rem
           e.preventDefault();
           goToSlide(totalSlides - 1);
           break;
+        case 't':
+        case 'T':
+          // Toggle sidebar with 't' key
+          setSidebarOpen(prev => !prev);
+          break;
+        case 'Escape':
+          // Close sidebar with Escape
+          setSidebarOpen(false);
+          break;
       }
     };
 
@@ -140,9 +214,12 @@ export function Presentation({ children, status = 'connected', currentSlide: rem
     const { clientX } = e;
     const { innerWidth } = window;
     
+    // Adjust click zones when sidebar is open
+    const leftZone = sidebarOpen ? 0.4 : 0.3;
+    
     if (clientX > innerWidth * 0.7) {
       nextSlide();
-    } else if (clientX < innerWidth * 0.3) {
+    } else if (clientX < innerWidth * leftZone && !sidebarOpen) {
       prevSlide();
     }
   };
@@ -151,6 +228,13 @@ export function Presentation({ children, status = 'connected', currentSlide: rem
 
   return (
     <div onClick={handleClick} style={{ cursor: 'pointer' }}>
+      <ThumbnailSidebar
+        totalSlides={totalSlides}
+        currentSlide={currentSlide}
+        onSlideSelect={goToSlide}
+        isOpen={sidebarOpen}
+        onToggle={() => setSidebarOpen(prev => !prev)}
+      />
       {children[currentSlide]}
       <div className="nav-hint">
         {currentSlide + 1} / {totalSlides}
@@ -160,7 +244,7 @@ export function Presentation({ children, status = 'connected', currentSlide: rem
         <div style={{
           position: 'fixed',
           bottom: 12,
-          left: 12,
+          left: sidebarOpen ? 172 : 12,
           width: 8,
           height: 8,
           borderRadius: '50%',
@@ -168,6 +252,7 @@ export function Presentation({ children, status = 'connected', currentSlide: rem
           opacity: 0.7,
           zIndex: 9999,
           animation: status === 'connecting' ? 'pulse 1.5s ease-in-out infinite' : 'none',
+          transition: 'left 0.3s ease',
         }} />
       )}
       <style>{`
