@@ -141,28 +141,22 @@ interface PresentationProps {
   children: ReactNode[];
   status?: 'connecting' | 'connected' | 'error';
   currentSlide?: number; // Remote-controlled slide (1-indexed)
+  onSlideChange?: (slideNum: number) => void; // Callback when user navigates (1-indexed)
 }
 
-export function Presentation({ children, status = 'connected', currentSlide: remoteSlide }: PresentationProps) {
-  const [localSlide, setLocalSlide] = useState(0);
+export function Presentation({ children, status = 'connected', currentSlide: remoteSlide, onSlideChange }: PresentationProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const totalSlides = children.length;
   
-  // Use remote slide if provided (convert from 1-indexed to 0-indexed)
-  const currentSlide = remoteSlide ? remoteSlide - 1 : localSlide;
-  
-  // Sync local state when remote changes
-  useEffect(() => {
-    if (remoteSlide) {
-      setLocalSlide(remoteSlide - 1);
-    }
-  }, [remoteSlide]);
+  // Convert from 1-indexed to 0-indexed for display
+  const currentSlide = (remoteSlide || 1) - 1;
 
   const goToSlide = useCallback((index: number) => {
     if (index >= 0 && index < totalSlides) {
-      setLocalSlide(index);
+      // Notify parent to update state (convert back to 1-indexed)
+      onSlideChange?.(index + 1);
     }
-  }, [totalSlides]);
+  }, [totalSlides, onSlideChange]);
 
   const nextSlide = useCallback(() => {
     goToSlide(currentSlide + 1);

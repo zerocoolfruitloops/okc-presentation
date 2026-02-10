@@ -546,7 +546,7 @@ function renderSlide(slide: SlideData, index: number, total: number) {
 
 export default function Home() {
   const { slides, status } = useRealtimePresentation();
-  const { currentSlide, theme, toggleTheme } = useRemoteControl();
+  const { currentSlide, theme, toggleTheme, goToSlide } = useRemoteControl();
 
   // Apply theme to document
   React.useEffect(() => {
@@ -555,7 +555,7 @@ export default function Home() {
 
   return (
     <>
-      <Presentation status={status} currentSlide={currentSlide}>
+      <Presentation status={status} currentSlide={currentSlide} onSlideChange={goToSlide}>
         {slides.map((slide, index) => renderSlide(slide as SlideData, index, slides.length))}
       </Presentation>
       
